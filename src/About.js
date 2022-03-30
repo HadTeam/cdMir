@@ -1,6 +1,10 @@
-import {Card, Container, Divider, Icon, Image, List} from "semantic-ui-react";
+import {Accordion, Card, Container, Divider, Icon, Image, List} from "semantic-ui-react";
+import {isMobile} from "react-device-detect";
 
 import contributors from './data/contributors.json';
+import faqs from './data/faqs.json';
+import donateInfo from './data/donateInfo.json';
+
 
 export default function About() {
     return (
@@ -10,74 +14,39 @@ export default function About() {
                     <Icon name='thumbs up outline'/>
                     贡献者
                 </Divider>
-                <Card.Group itemsPerRow={4} stackable>
-                    {
-                        contributors.map((item)=>{
-                            return (
-                                <Card raised href={item.link} target='_blank'>
-                                    <Image src={item.avatar} wrapped/>
-                                    <Card.Content>
-                                        <Card.Header>{item.name}</Card.Header>
-                                        <Card.Meta>{item.meta}</Card.Meta>
-                                        <Card.Description>
-                                            {item.description}
-                                        </Card.Description>
-                                    </Card.Content>
-                                </Card>
-                            );
-                        })
-                    }
-                </Card.Group>
+                <Divider hidden />
+                <Container>
+                    <Card.Group centered itemsPerRow={isMobile?2:4} items={contributors} />
+                </Container>
                 
                 <Divider horizontal as='h4' id='description'>
                     <Icon name='tag'/>
                     介绍
                 </Divider>
+                <Divider hidden />
+                <Container>
                 
+                </Container>
                 
                 <Divider horizontal as='h4' id='faq'>
                     <Icon name='question'/>
                     FAQ
                 </Divider>
-                <List>
-                    <List.Item>
-                        <List.Header>
-                            ???
-                        </List.Header>
-                        <List.Content>
-                            !!!
-                        </List.Content>
-                    </List.Item>
-                </List>
-                
+                <Divider hidden />
+                <Container>
+                    <Accordion
+                        exclusive={false}
+                        fluid
+                        panels={faqs}
+                    />
+                </Container>
                 <Divider horizontal as='h4' id='donate'>
-                    <Icon name='money bill alternate'/>
+                    <Icon name='yen sign'/>
                     捐助
                 </Divider>
-                <Card.Group stackable itemsPerRow={5}>
-                    <Card>
-                        <Image src='/static/avatar/cornworld.jpg'/>
-                        <Card.Content>
-                            <Card.Meta>微信</Card.Meta>
-                        </Card.Content>
-                    </Card>
-                    <Card>
-                        <Image src='/static/avatar/cornworld.jpg'/>
-                        <Card.Content>
-                            <Card.Meta>支付宝</Card.Meta>
-                        </Card.Content>
-                    </Card>
-                    <Card>
-                        <Image src='/static/avatar/cornworld.jpg'/>
-                        <Card.Content>
-                            <Card.Meta>QQ</Card.Meta>
-                        </Card.Content>
-                    </Card>
-                
-                
-                </Card.Group>
-            
-            
+                <Container>
+                    <Card.Group itemsPerRow={isMobile?3:5} centered items={donateInfo} />
+                </Container>
             </Container>
         </div>
     );
