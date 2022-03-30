@@ -14,7 +14,7 @@ export default function Header() {
             case '/files':
                 return 'files';
             case '/about':
-                return '/about';
+                return 'about';
         }
     };
     let location = useLocation();
