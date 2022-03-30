@@ -1,0 +1,23 @@
+[
+    {
+        "name":"Dev Cpp",
+        "description": "Example description",
+        "icon": { "type": "icon", "name": "question" },
+        "download": [
+            {
+                "name": "官方",
+                "list": [
+                    {"filename":"1", "url":"example.com"},
+                    {"filename":"2", "url":"example.com"}
+                ]
+            },
+            {
+                "name": "国内高速",
+                "list": [
+                    {"filename":"1", "url":"example.com"},
+                    {"filename":"2", "url":"example.com"}
+                ]
+            }
+        ]
+    }
+]

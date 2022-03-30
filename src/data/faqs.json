@@ -1,0 +1,7 @@
+[
+    {
+        "key": "aboutMirrorFileSecurity",
+        "title": "如何确保镜像文件的安全性?",
+        "content": "我们会通过官方渠道下载后计算 hash 值，并展示在 Files 页面"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "filename": "test.exe",
+        "url": "https://test.com/test.exe",
+        "urlType": "directly",
+        "tags": {
+            "source": "test.com",
+            "platform": "windows",
+            "hash": {
+                "sha1": "aaawasha1"
+            }
+        }
+    }
+]
