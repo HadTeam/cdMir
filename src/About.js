@@ -1,5 +1,6 @@
 import {Card, Container, Divider, Icon, Image, List} from "semantic-ui-react";
 
+import contributors from './data/contributors.json';
 
 export default function About() {
     return (
@@ -9,40 +10,23 @@ export default function About() {
                     <Icon name='thumbs up outline'/>
                     贡献者
                 </Divider>
-                
                 <Card.Group itemsPerRow={4} stackable>
-                    <Card raised href='https://cornworld.cn/' target='_blank'>
-                        <Image src='/static/avatar/cornworld.jpg' wrapped/>
-                        <Card.Content>
-                            <Card.Header>CornWorld</Card.Header>
-                            <Card.Meta>全栈开发者 & OIer</Card.Meta>
-                            <Card.Description>
-                                "希望人没事"
-                            </Card.Description>
-                        </Card.Content>
-                    
-                    </Card>
-                    <Card raised href='https://www.cnblogs.com/dhclient/p/16065479.html' target='_blank'>
-                        <Image src='/static/avatar/dhclientqwq.jpg' wrapped/>
-                        <Card.Content>
-                            <Card.Header>dhclientqwq</Card.Header>
-                            <Card.Meta>OIer</Card.Meta>
-                            <Card.Description>
-                                "Starting from scratch."
-                            </Card.Description>
-                        </Card.Content>
-                    
-                    </Card>
-                    <Card href='' target='_blank'>
-                        <Image src='/static/avatar/echidna.jpg' wrapped/>
-                        <Card.Content>
-                            <Card.Header>Echidna</Card.Header>
-                            <Card.Meta>OIer</Card.Meta>
-                            <Card.Description>
-                            
-                            </Card.Description>
-                        </Card.Content>
-                    </Card>
+                    {
+                        contributors.map((item)=>{
+                            return (
+                                <Card raised href={item.link} target='_blank'>
+                                    <Image src={item.avatar} wrapped/>
+                                    <Card.Content>
+                                        <Card.Header>{item.name}</Card.Header>
+                                        <Card.Meta>{item.meta}</Card.Meta>
+                                        <Card.Description>
+                                            {item.description}
+                                        </Card.Description>
+                                    </Card.Content>
+                                </Card>
+                            );
+                        })
+                    }
                 </Card.Group>
                 
                 <Divider horizontal as='h4' id='description'>
