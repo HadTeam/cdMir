@@ -14,12 +14,12 @@ jobs:
          node-version: 10.x
     - name: npm install, build
       run: |
-        cd ${{GITHUB_ACTION_PATH}}/src/data
+        cd $GITHUB_ACTION_PATH/src/data
         npm install
         node processData.js
     - name: commit
       run: |
-        cd ${{GITHUB_ACTION_PATH}}
+        cd $GITHUB_ACTION_PATH
         git config user.name "Github Actions Bot - processData"
         git config user.email "<>"
         git add ./src/data/processed/*
