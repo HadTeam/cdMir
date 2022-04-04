@@ -8,10 +8,10 @@ jobs:
     name: process data file
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js 10.x
+    - name: Use Node.js 16.14.2
       uses: actions/setup-node@v1
       with:
-         node-version: 10.x
+         node-version: 16.14.2
     - name: npm install, build
       run: |
         cd ./src/data
