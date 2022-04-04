@@ -1,0 +1,27 @@
+name: update website
+on:
+- push
+- pull_request
+jobs:
+  processData:
+    runs-on: ubuntu-20.04
+    name: process data file
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+         node-version: 10.x
+    - name: npm install, build
+      run: |
+        cd ${{GITHUB_ACTION_PATH}}/src/data
+        npm install
+        node processData.js
+    - name: commit
+      run: |
+        cd ${{GITHUB_ACTION_PATH}}
+        git config user.name "Github Actions Bot - processData"
+        git config user.email "<>"
+        git add ./src/data/processed/*
+        git commit -m "[Bot] Auto process data files"
+        git push origin main
