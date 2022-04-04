@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "csv": "^6.0.5",
+    "fs": "^0.0.1-security",
+    "object-hash": "^3.0.0"
+  },
+  "type": "module"
+}

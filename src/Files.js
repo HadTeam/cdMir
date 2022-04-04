@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Divider, Grid, Header, Icon, Input, Label, Menu, Popup, Segment, Table} from "semantic-ui-react";
 
-import files from './data/files.json';
+import files from './data/processed/files.json';
 import {Link} from "react-router-dom";
 
 export default function Files() {

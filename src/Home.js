@@ -3,7 +3,7 @@ import {EventEmitter} from "events";
 
 import {Container, Divider, Grid, Header, Icon, Image, List, Message, Modal, Segment} from "semantic-ui-react";
 
-import softwareData from './data/software.json';
+import softwareData from './data/processed/software.json';
 import {Link} from "react-router-dom";
 
 const eventEmitter = new EventEmitter();
