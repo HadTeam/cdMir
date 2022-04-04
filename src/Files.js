@@ -67,30 +67,33 @@ export default function Files() {
                                     <Table.Row key={'fileListItem' + index}>
                                         <Table.Cell singleLine width={5}>
                                             <Icon name='text file'/>
-                                            <Link to={item.url}>{item.filename}</Link>
+                                            <a href={item.url} target='_blank'>{item.filename}</a>
                                         </Table.Cell>
                                         <Table.Cell colSpan={2}>
                                             <Label.Group>
                                                 {
                                                     (Object.keys(item.tags)).map((tag) => {
                                                         switch (tag) {
-                                                            case 'hash':
+                                                            case 'hash':{
                                                                 return (
                                                                     <Popup
                                                                         content={
-                                                                            Object.keys(item.tags[tag]).map((hash)=>{
+                                                                            Object.keys(item.tags[tag]).map((hash) => {
                                                                                 return <p>{hash}: {item.tags[tag][hash]}</p>
                                                                             })
                                                                         }
                                                                         on='click'
                                                                         pinned
                                                                         trigger={
-                                                                            <Label as='a'>
-                                                                                hash(click)
+                                                                            <Label as='a'
+                                                                                   key={'file' + index + 'Tag' + tag}>
+                                                                                hash: (click)
                                                                             </Label>
                                                                         }
                                                                     />
                                                                 );
+                                                            }
+                                                            case 'id': return ;
                                                             default:
                                                                 return (<Label>{tag}: {item.tags[tag]}</Label>);
                                                         }
@@ -105,28 +108,6 @@ export default function Files() {
                     }
                 </Table.Body>
             </Table>
-            {/*<Segment attached='bottom'>*/}
-            {/*    <Container>*/}
-            {/*        <List relaxed>*/}
-            {/*            {*/}
-            {/*                fileList.map((item, index) => {*/}
-            {/*                    return (*/}
-            {/*                        <List.Item as='a' href={item.url} key={'file_' + index}>*/}
-            {/*                            <List.Content>*/}
-            {/*                                <List.Header>{item.name}</List.Header>*/}
-            {/*                                <List.Description>*/}
-            {/*                                    sha1: {item.sha1}*/}
-            {/*                                </List.Description>*/}
-            {/*                            </List.Content>*/}
-            {/*                        */}
-            {/*                        </List.Item>*/}
-            {/*                    );*/}
-            {/*                })*/}
-            {/*            }*/}
-            {/*        </List>*/}
-            {/*    </Container>*/}
-            {/*</Segment>*/}
-        
         </div>
     
     );

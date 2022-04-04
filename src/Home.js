@@ -3,7 +3,7 @@ import {EventEmitter} from "events";
 
 import {Container, Divider, Grid, Header, Icon, Image, List, Message, Modal, Segment} from "semantic-ui-react";
 
-import softwareData from './data/softwares.json';
+import softwareData from './data/software.json';
 import {Link} from "react-router-dom";
 
 const eventEmitter = new EventEmitter();
@@ -19,17 +19,12 @@ function SoftwareList() {
                             <Grid.Column
                                 key={'softwareCard' + index}
                                 onClick={() => {
-                                    console.log("awa");
                                     eventEmitter.emit('openDownloadModal', {type: 'open', index: index})
                                 }}
                             >
                                 <a href='#'>
                                     <Segment raised>
                                         <Header>
-                                            {software.icon.type === 'url' ?
-                                                <Image href={software.icon.url}/> :
-                                                <Icon name={software.icon.name}/>
-                                            }
                                             <Header.Content>
                                                 {software.name}
                                                 <Header.Subheader>
@@ -54,12 +49,12 @@ function HomeModal() {
     const [state, dispatch] = React.useReducer((state, action) => {
         switch (action.type) {
             case 'open':
-                return {...state, open: true, download: softwareData[action.index].download};
+                return {...state, open: true, download: softwareData[action.index].sources};
             case 'close':
             default:
-                return {state, open: false, download: []};
+                return {state, open: false, download: {}};
         }
-    }, {open: false, download: []});
+    }, {open: false, download: {}});
     
     useEffect(() => {
         listener = eventEmitter.addListener("openDownloadModal", (data) => {
@@ -81,16 +76,16 @@ function HomeModal() {
                 <Modal.Description>
                     <List>
                         {
-                            state.download.map((item, index) => {
+                            Object.keys(state.download).map((key, index) => {
                                 return (
                                     <List.Item key={'downloadModalHeader' + index}>
-                                        {item.name}
+                                        {key}
                                         <List.List>
                                             {
-                                                item.list.map((item, index) => {
+                                                state.download[key].map((item, index) => {
                                                     return (
                                                         <List.Item key={'downloadModalAddress' + index}>
-                                                            <Link to={item.url}>{item.filename}</Link>
+                                                            <a href={item.url}>{item.filename}</a>
                                                         </List.Item>
                                                     );
                                                 })
@@ -111,7 +106,7 @@ function HomeModal() {
 export default function Home() {
     return (
         <div id='home'>
-            <Header>
+            <Header as='h3'>
                 <Icon name='settings'/>
                 <Header.Content>
                     欢迎
