@@ -12,7 +12,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
          node-version: 16.14.2
-    - name: npm install, build
+    - name: npm install, start process
       run: |
         cd ./src/data
         npm install
@@ -24,3 +24,27 @@ jobs:
         git add ./src/data/processed/*
         git commit -m "[Bot] Auto process data files"
         git push origin main
+  
+  deploy:
+    name: deploy to Tencent COS
+    needs: processData
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.14.2
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.14.2
+      - name: npm install, build
+        run: |
+          npm install
+          NODE_ENV=production GENERATE_SOURCEMAP=false npm run build
+      - name: Upload COS
+        uses: Bluefissure/tencent-cos-action@v0.1.1
+        with:
+          args: delete -r -f / && upload -r ./build/ /
+          secret_id: ${{ secrets.SECRET_ID }}
+          secret_key: ${{ secrets.SECRET_KEY }}
+          bucket: ${{ secrets.BUCKET }}
+          region: ap-guangzhou
+          accelerate: false
