@@ -21,7 +21,7 @@ jobs:
       run: |
         git config user.name "Github Actions Bot - processData"
         git config user.email "<>"
-        git add ./src/data/processed/*
+        git add .
         git commit -m "[Bot] Auto process data files"
         git push origin main
   
