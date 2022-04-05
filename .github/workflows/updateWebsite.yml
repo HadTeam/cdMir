@@ -44,11 +44,12 @@ jobs:
           NODE_ENV: production
           GENERATE_SOURCEMAP: false
       - name: Upload COS
-        uses: Bluefissure/tencent-cos-action@v0.1.1
+        uses: TencentCloud/cos-action@v1
         with:
-          args: upload -rs ./build/ /
           secret_id: ${{ secrets.SECRET_ID }}
           secret_key: ${{ secrets.SECRET_KEY }}
-          bucket: ${{ secrets.BUCKET }}
-          region: ap-guangzhou
-          accelerate: true
+          cos_bucket: ${{ secrets.BUCKET }}
+          cos_region: ap-guangzhou
+          local_path: /build
+          remote_path: /
+          clean: true
