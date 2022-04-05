@@ -1,6 +1,6 @@
 ﻿软件简称,文件名,地址,地址类型,下载源,文件类型,平台
 tdmgcc,tdm64-gcc-10.3.0-2.exe,https://github.com/jmeubank/tdm-gcc/releases/download/v10.3.0-tdm64-2/tdm64-gcc-10.3.0-2.exe,directly,auto,auto,win32
-tdmgcc,tdm64-gcc-10.3.0-2.exe,https://software-mirror-1307412436.cos.ap-guangzhou.myqcloud.com/AtomSetup-x64.exe,directly,auto,auto,win32
+tdmgcc,tdm64-gcc-10.3.0-2.exe,https://software-mirror-1307412436.cdn.ap-guangzhou.myqcloud.com/AtomSetup-x64.exe,directly,auto,auto,win32
 llvm,clang+llvm-13.0.1-x86_64-linux-gnu-ubuntu-18.04.tar.xz,https://github.com/llvm/llvm-project/releases/download/llvmorg-13.0.1/clang+llvm-13.0.1-x86_64-linux-gnu-ubuntu-18.04.tar.xz,directly,auto,auto,linux_deb
 llvm,LLVM-13.0.1-win32.exe,https://github.com/llvm/llvm-project/releases/download/llvmorg-13.0.1/LLVM-13.0.1-win32.exe,directly,auto,auto,win32
 llvm,LLVM-13.0.1-win64.exe,https://github.com/llvm/llvm-project/releases/download/llvmorg-13.0.1/LLVM-13.0.1-win64.exe,directly,auto,auto,win64
