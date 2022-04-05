@@ -3,6 +3,7 @@ tdmgcc,tdm64-gcc-10.3.0-2.exe,https://github.com/jmeubank/tdm-gcc/releases/downl
 tdmgcc,tdm64-gcc-10.3.0-2.exe,https://dl-software-mirror.ug0.ltd/tdm64-gcc-10.3.0-2.exe,directly,auto,auto,win32
 llvm,clang+llvm-13.0.1-x86_64-linux-gnu-ubuntu-18.04.tar.xz,https://github.com/llvm/llvm-project/releases/download/llvmorg-13.0.1/clang+llvm-13.0.1-x86_64-linux-gnu-ubuntu-18.04.tar.xz,directly,auto,auto,linux_deb
 llvm,clang+llvm-13.0.1-x86_64-linux-gnu-ubuntu-18.04.tar.xz,https://dl-software-mirror.ug0.ltd/clang+llvm-13.0.1-x86_64-linux-gnu-ubuntu-18.04.tar.xz,directly,auto,auto,linux_deb
+llvm,LLVM-13.0.1-win32.exe,https://dl-software-mirror.ug0.ltd/LLVM-13.0.1-win32.exe,directly,auto,auto,win32
 llvm,LLVM-13.0.1-win32.exe,https://github.com/llvm/llvm-project/releases/download/llvmorg-13.0.1/LLVM-13.0.1-win32.exe,directly,auto,auto,win32
 llvm,LLVM-13.0.1-win64.exe,https://github.com/llvm/llvm-project/releases/download/llvmorg-13.0.1/LLVM-13.0.1-win64.exe,directly,auto,auto,win64
 llvm,clang+llvm-14.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz,https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.0/clang+llvm-14.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz,directly,auto,auto,linux_deb
