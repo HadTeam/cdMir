@@ -38,7 +38,11 @@ jobs:
       - name: npm install, build
         run: |
           npm install
-          NODE_ENV=production GENERATE_SOURCEMAP=false npm run build
+          npm run build
+        env:
+          CI: false
+          NODE_ENV: production
+          GENERATE_SOURCEMAP: false
       - name: Upload COS
         uses: Bluefissure/tencent-cos-action@v0.1.1
         with:
