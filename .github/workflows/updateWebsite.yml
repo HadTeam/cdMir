@@ -50,6 +50,6 @@ jobs:
           secret_key: ${{ secrets.SECRET_KEY }}
           cos_bucket: ${{ secrets.BUCKET }}
           cos_region: ap-guangzhou
-          local_path: /build
+          local_path: build
           remote_path: /
           clean: true
