@@ -51,4 +51,4 @@ jobs:
           secret_key: ${{ secrets.SECRET_KEY }}
           bucket: ${{ secrets.BUCKET }}
           region: ap-guangzhou
-          accelerate: false
+          accelerate: true
