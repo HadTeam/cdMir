@@ -18,12 +18,12 @@ jobs:
         npm install
         node processData.js
     - name: commit
-      run: |
-        git config user.name "Github Actions Bot - processData"
-        git config user.email "<>"
-        git add .
-        git commit -m "[Bot] Auto process data files"
-        git push origin main
+      uses: EndBug/add-and-commit@v9
+      with:
+        message: [Bot] Auto process data files
+        committer_name: Github Actions Bot - processData
+        committer_email: <>
+        add: .
   
   deploy:
     name: deploy to Tencent COS
