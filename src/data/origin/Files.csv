@@ -83,3 +83,7 @@ nwjs,nwjs-v0.62.1-win-ia32.zip,https://dl.nwjs.io/v0.62.1/nwjs-v0.62.1-win-ia32.
 nwjs,nwjs-v0.62.1-win-ia32.zip,https://dl-software-mirror.ug0.ltd/nwjs-v0.62.1-win-ia32.zip,directly,auto,auto,win32
 nwjs,nwjs-sdk-v0.62.1-win-ia32.zip,https://dl.nwjs.io/v0.62.1/nwjs-sdk-v0.62.1-win-ia32.zip,directly,auto,auto,win32
 nwjs,nwjs-sdk-v0.62.1-win-ia32.zip,https://dl-software-mirror.ug0.ltd/nwjs-sdk-v0.62.1-win-ia32.zip,directly,auto,auto,win32
+lemonlime,lemon-win-qt6-x64-Release.zip,https://github.com/Project-LemonLime/Project_LemonLime/releases/download/0.3.3/lemon-win-qt6-x64-Release.zip,directly,auto,auto,zip(windows)
+lemonlime,lemon-win-qt6-x64-RelWithDebInfo.zip,https://github.com/Project-LemonLime/Project_LemonLime/releases/download/0.3.3/lemon-win-qt6-x64-RelWithDebInfo.zip,directly,auto,auto,zip(windows)
+lemonlime,lemon-Qt6.2.3-Release-arm64.dmg,https://github.com/Project-LemonLime/Project_LemonLime/releases/download/0.3.3/lemon-Qt6.2.3-Release-arm64.dmg,directly,auto,auto,dmg
+lemonlime,lemon-Qt6.2.3-Release-x86_64.dmg,https://github.com/Project-LemonLime/Project_LemonLime/releases/download/0.3.3/lemon-Qt6.2.3-Release-x86_64.dmg,directly,auto,auto,dmg
