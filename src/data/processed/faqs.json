@@ -1,13 +1,13 @@
 [
     {
         "key": "aboutMirrorFileSecurity",
-        "title": "如何确保镜像文件的安全性?",,
+        "title": "如何确保镜像文件的安全性?",
         "content": "我们会通过官方渠道下载后计算 hash 值，并展示在 Files 页面的 hash 标签中"
     },
     {
         "key": "aboutMirrorDownloadSpeed",
         "title": "镜像下载的速度怎么样?",
-        "content": "目前 dl-software-mirror.ug0.ltd 的下载速度限制为最高 15000KBps，cr.had.xin 的下载速度取决于世纪互联 sp 的下载速度(实测最高应该在 90000LNps 左右)。 上述镜像下载速度都可以跑满大部分家用带宽！",
+        "content": "目前 dl-software-mirror.ug0.ltd 的下载速度限制为最高 15000KBps，cr.had.xin 的下载速度取决于世纪互联 sp 的下载速度(实测最高应该在 90000LNps 左右)。 上述镜像下载速度都可以跑满大部分家用带宽！"
     },
     {
         "key": "aboutWebsiteUpdate",
