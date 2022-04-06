@@ -44,7 +44,7 @@ jobs:
           NODE_ENV: production
           GENERATE_SOURCEMAP: false
       - name: Upload COS
-        uses: TencentCloud/cos-action@v1
+        uses: CornWorld/cos-action@v1
         with:
           secret_id: ${{ secrets.SECRET_ID }}
           secret_key: ${{ secrets.SECRET_KEY }}
