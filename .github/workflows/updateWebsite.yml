@@ -1,29 +1,29 @@
 name: update website
 on:
-- push
-- pull_request
+  - push
+  - pull_request
 jobs:
   processData:
     runs-on: ubuntu-20.04
     name: process data file
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js 16.14.2
-      uses: actions/setup-node@v1
-      with:
-         node-version: 16.14.2
-    - name: npm install, start process
-      run: |
-        cd ./src/data
-        npm install
-        node processData.js
-    - name: commit
-      uses: EndBug/add-and-commit@v9
-      with:
-        message: [Bot] Auto process data files
-        committer_name: Github Actions Bot - processData
-        committer_email: <>
-        add: .
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.14.2
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.14.2
+      - name: npm install, start process
+        run: |
+          cd ./src/data
+          npm install
+          node processData.js
+      - name: commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: [ Bot ] Auto process data files
+          committer_name: Github Actions Bot - processData
+          committer_email: <>
+          add: .
   
   deploy:
     name: deploy to Tencent COS
