@@ -2,16 +2,16 @@
     {
         "name": "支付宝",
         "as": "a",
-        "image": ""
+        "image": "/static/image/alipay.png"
     },
     {
         "name": "微信支付",
         "as": "a",
-        "image": ""
+        "image": "/static/image/wechatpay.png"
     },
     {
         "name": "QQ钱包",
         "as": "a",
-        "image": ""
+        "image": "/static/image/qqpay.png"
     }
 ]
