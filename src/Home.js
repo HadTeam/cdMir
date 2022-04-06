@@ -123,8 +123,8 @@ export default function Home() {
                         需要帮助
                     </Message.Header>
                     <List bulleted>
-                        <List.Item key='submitQuestion'>提交问题</List.Item>
-                        <List.Item key='checkFAQ'>查阅 FAQ</List.Item>
+                        <List.Item key='submitQuestion' href='https://github.com/HadTeam/SoftwareMirrorList/issues'>提交 Issues (国内可能无法正常打开)</List.Item>
+                        <List.Item key='checkFAQ' href='/about#faq'>查阅 FAQ</List.Item>
                     </List>
                 </Message.Content>
             </Message>
