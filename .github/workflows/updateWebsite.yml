@@ -18,11 +18,11 @@ jobs:
           npm install
           node processData.js
       - name: commit
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v9.0.0
         with:
-          message: [ Bot ] Auto process data files
-          committer_name: Github Actions Bot - processData
-          committer_email: <>
+          message: "[Bot] Auto process data files"
+          committer_name: "Github Actions Bot - processData"
+          committer_email: "<>"
           add: .
   
   deploy:
