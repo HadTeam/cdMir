@@ -15,7 +15,9 @@ function parseCsvFile(path) {
     return csv.parse(fs.readFileSync(path), {delimiter: ',', header: true}).splice(1);
 }
 
-const fileSourceMap={}
+const fileSourceMap={
+    "dl-software-mirror.ug0.ltd": "ug0.ltd(Mirror)"
+}
 
 function getFileSource(url) {
     let urlObj=new URL(url);
