@@ -1,6 +1,6 @@
 [
     {
-        "name": "CornWorld",
+        "header": "CornWorld",
         "href": "https://cornworld.cn/",
         "as": "a",
         "image": "/static/avatar/cornworld.jpg",
@@ -8,7 +8,7 @@
         "description": "\"希望人没事\""
     },
     {
-        "name": "dhclientqwq",
+        "header": "dhclientqwq",
         "href": "https://www.cnblogs.com/dhclient/p/16065479.html",
         "as": "a",
         "image": "/static/avatar/dhclientqwq.jpg",
@@ -16,7 +16,7 @@
         "description": "\"Starting from scratch.\""
     },
     {
-        "name": "Echidna",
+        "header": "Echidna",
         "href": "",
         "as": "a",
         "image": "/static/avatar/echidna.jpg",
