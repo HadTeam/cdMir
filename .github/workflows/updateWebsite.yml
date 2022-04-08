@@ -12,11 +12,18 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.14.2
+      - name: get commit info
+        id: commit
+        uses: pr-mpt/actions-commit-hash@v1
+        with:
+          prefix: 'commit_'
       - name: npm install, start process
         run: |
           cd ./src/data
           npm install
           node processData.js
+        env:
+          COMMITID: ${{ steps.commit.outputs.short }}
       - name: commit
         uses: EndBug/add-and-commit@v9.0.0
         with:

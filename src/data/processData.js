@@ -103,14 +103,17 @@ function parseDataFiles() {
         software[index]["sources"]=sources;
     });
     
+    if(process.env.COMMITID) {
+        let buildInfo={
+            commitId: process.env.COMMITID
+        };
+        
+        fs.writeFileSync("./processed/buildInfo.json", JSON.stringify(buildInfo));
+    }
+    
     fs.writeFileSync("./processed/software.json", JSON.stringify(software));
     fs.writeFileSync("./processed/files.json", JSON.stringify(files));
     
 }
-
-
-
-
-
 
 parseDataFiles()

@@ -7,6 +7,7 @@ import Home, {HomeModal} from './Home.js';
 import Files from './Files.js';
 import About from './About.js';
 
+import buildInfo from './data/processed/buildInfo.json'
 
 import 'semantic-ui-css/semantic.min.css'
 import {Container, Divider, Icon, Segment} from "semantic-ui-react";
@@ -33,6 +34,7 @@ ReactDOM.render(
             <Container textAlign='center'>
                 <Segment vertical>
                     <div>cdMir Powered by <a href='https://github.com/HadTeam'>HadTeam</a></div>
+                    <div>Build: {buildInfo.commitId}</div>
                     <div>
                         <a href='https://github.com/HadTeam/cdMir'><Icon name='github'/></a>
                     </div>
