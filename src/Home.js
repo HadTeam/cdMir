@@ -124,7 +124,7 @@ export default function Home() {
                     </Message.Header>
                     <List bulleted>
                         <List.Item key='submitQuestion' href='https://cornworld.cn/other/softwareMirrorList'>提交 建议&问题</List.Item>
-                        <List.Item key='submitIssues' href='https://github.com/HadTeam/SoftwareMirrorList/issues'>提交 Github Issues (国内可能无法正常打开)</List.Item>
+                        <List.Item key='submitIssues' href='https://github.com/HadTeam/cdMir/issues'>提交 Github Issues (国内可能无法正常打开)</List.Item>
                         <List.Item key='checkFAQ' href='/about#faq'>查阅 FAQ</List.Item>
                     </List>
                 </Message.Content>
