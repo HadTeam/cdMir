@@ -1,4 +1,4 @@
-import {Accordion, Card, Container, Divider, Icon, Image, List} from "semantic-ui-react";
+import {Accordion, Card, Container, Divider, Icon} from "semantic-ui-react";
 import {isMobile} from "react-device-detect";
 
 import contributors from './data/processed/contributors.json';
@@ -14,16 +14,16 @@ export default function About() {
                     <Icon name='thumbs up outline'/>
                     贡献者
                 </Divider>
-                <Divider hidden />
+                <Divider hidden/>
                 <Container>
-                    <Card.Group centered itemsPerRow={isMobile?2:4} items={contributors} />
+                    <Card.Group centered itemsPerRow={isMobile ? 2 : 4} items={contributors}/>
                 </Container>
                 
                 <Divider horizontal as='h4' id='description'>
                     <Icon name='tag'/>
                     介绍
                 </Divider>
-                <Divider hidden />
+                <Divider hidden/>
                 <Container>
                 
                 </Container>
@@ -32,7 +32,7 @@ export default function About() {
                     <Icon name='question'/>
                     FAQ
                 </Divider>
-                <Divider hidden />
+                <Divider hidden/>
                 <Container>
                     <Accordion
                         exclusive={false}
@@ -45,7 +45,7 @@ export default function About() {
                     捐助
                 </Divider>
                 <Container>
-                    <Card.Group itemsPerRow={isMobile?3:5} centered items={donateInfo} />
+                    <Card.Group itemsPerRow={isMobile ? 3 : 5} centered items={donateInfo}/>
                 </Container>
             </Container>
         </div>

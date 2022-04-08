@@ -3,13 +3,12 @@ import React from 'react';
 import {Divider, Grid, Header, Icon, Input, Label, Menu, Popup, Segment, Table} from "semantic-ui-react";
 
 import files from './data/processed/files.json';
-import {Link} from "react-router-dom";
 
 export default function Files() {
     return (
         <div id='body'>
             <Segment>
-    
+                
                 <Header size='large'>
                     <Icon name={'battery full'}/>
                     <Header.Content>
@@ -21,7 +20,7 @@ export default function Files() {
                 </Header>
                 
                 <Divider hidden/>
-    
+                
                 <Grid stackable columns={3}>
                     <Grid.Column>
                         <Segment>
@@ -74,7 +73,7 @@ export default function Files() {
                                                 {
                                                     (Object.keys(item.tags)).map((tag) => {
                                                         switch (tag) {
-                                                            case 'hash':{
+                                                            case 'hash': {
                                                                 return (
                                                                     <Popup
                                                                         content={
@@ -93,7 +92,8 @@ export default function Files() {
                                                                     />
                                                                 );
                                                             }
-                                                            case 'id': return ;
+                                                            case 'id':
+                                                                return;
                                                             default:
                                                                 return (<Label>{tag}: {item.tags[tag]}</Label>);
                                                         }

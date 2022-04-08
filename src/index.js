@@ -34,7 +34,7 @@ ReactDOM.render(
                 <Segment vertical>
                     <div>cdMir Powered by <a href='https://github.com/HadTeam'>HadTeam</a></div>
                     <div>
-                        <a href='https://github.com/HadTeam/cdMir'><Icon name='github' /></a>
+                        <a href='https://github.com/HadTeam/cdMir'><Icon name='github'/></a>
                     </div>
                 </Segment>
             </Container>

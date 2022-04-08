@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react';
 import {EventEmitter} from "events";
 
-import {Container, Divider, Grid, Header, Icon, Image, List, Message, Modal, Segment} from "semantic-ui-react";
+import {Container, Divider, Grid, Header, Icon, List, Message, Modal, Segment} from "semantic-ui-react";
 
 import softwareData from './data/processed/software.json';
-import {Link} from "react-router-dom";
 
 const eventEmitter = new EventEmitter();
 
@@ -123,8 +122,10 @@ export default function Home() {
                         需要帮助
                     </Message.Header>
                     <List bulleted>
-                        <List.Item key='submitQuestion' href='https://cornworld.cn/other/softwareMirrorList'>提交 建议&问题</List.Item>
-                        <List.Item key='submitIssues' href='https://github.com/HadTeam/cdMir/issues'>提交 Github Issues (国内可能无法正常打开)</List.Item>
+                        <List.Item key='submitQuestion' href='https://cornworld.cn/other/softwareMirrorList'>提交
+                            建议&问题</List.Item>
+                        <List.Item key='submitIssues' href='https://github.com/HadTeam/cdMir/issues'>提交 Github Issues
+                            (国内可能无法正常打开)</List.Item>
                         <List.Item key='checkFAQ' href='/about#faq'>查阅 FAQ</List.Item>
                     </List>
                 </Message.Content>

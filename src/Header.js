@@ -39,7 +39,7 @@ export default function Header() {
                     >
                         Home
                     </Menu.Item>
-    
+                    
                     <Menu.Item
                         name='files'
                         active={state === 'files'}
@@ -48,7 +48,7 @@ export default function Header() {
                     >
                         Files
                     </Menu.Item>
-    
+                    
                     <Menu.Item
                         name='about'
                         active={state === 'about'}
@@ -57,7 +57,7 @@ export default function Header() {
                     >
                         About
                     </Menu.Item>
-    
+                    
                     <Menu.Menu position='right'>
                         <Menu.Item
                             name='Donate'
