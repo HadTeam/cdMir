@@ -1,5 +1,5 @@
 import React from 'react';
-import {Menu} from "semantic-ui-react";
+import {Container, Menu} from "semantic-ui-react";
 import {useLocation} from "react-router-dom";
 
 export default function Header() {
@@ -29,46 +29,48 @@ export default function Header() {
     return (
         <header>
             <Menu pointing stackable>
-                <Menu.Item header>cdMir</Menu.Item>
-                <Menu.Item
-                    name='home'
-                    active={state === 'home'}
-                    onClick={() => setState('home')}
-                    href='/'
-                >
-                    Home
-                </Menu.Item>
-                
-                <Menu.Item
-                    name='files'
-                    active={state === 'files'}
-                    onClick={() => setState('files')}
-                    href='/files'
-                >
-                    Files
-                </Menu.Item>
-                
-                <Menu.Item
-                    name='about'
-                    active={state === 'about'}
-                    onClick={() => setState('about')}
-                    href='/about'
-                >
-                    About
-                </Menu.Item>
-                
-                <Menu.Menu position='right'>
+                <Container>
+                    <Menu.Item header>cdMir</Menu.Item>
                     <Menu.Item
-                        name='Donate'
-                        active={false}
-                        href='/about#donate'
-                    />
+                        name='home'
+                        active={state === 'home'}
+                        onClick={() => setState('home')}
+                        href='/'
+                    >
+                        Home
+                    </Menu.Item>
+    
                     <Menu.Item
-                        name='Github'
-                        active={false}
-                        href='https://github.com/HadTeam/cdMir'
-                    />
-                </Menu.Menu>
+                        name='files'
+                        active={state === 'files'}
+                        onClick={() => setState('files')}
+                        href='/files'
+                    >
+                        Files
+                    </Menu.Item>
+    
+                    <Menu.Item
+                        name='about'
+                        active={state === 'about'}
+                        onClick={() => setState('about')}
+                        href='/about'
+                    >
+                        About
+                    </Menu.Item>
+    
+                    <Menu.Menu position='right'>
+                        <Menu.Item
+                            name='Donate'
+                            active={false}
+                            href='/about#donate'
+                        />
+                        <Menu.Item
+                            name='Github'
+                            active={false}
+                            href='https://github.com/HadTeam/cdMir'
+                        />
+                    </Menu.Menu>
+                </Container>
             </Menu>
         </header>
     );
