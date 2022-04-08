@@ -27,6 +27,7 @@ ReactDOM.render(
                     </Routes>
                 </Segment>
             </Container>
+            <Divider hidden/>
         </BrowserRouter>
     
     </React.StrictMode>,
