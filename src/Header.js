@@ -28,7 +28,7 @@ export default function Header() {
     
     return (
         <header>
-            <Menu pointing stackable>
+            <Menu pointing stackable borderless fixed='top'>
                 <Container>
                     <Menu.Item header>cdMir</Menu.Item>
                     <Menu.Item

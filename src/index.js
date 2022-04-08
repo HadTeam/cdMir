@@ -9,14 +9,14 @@ import About from './About.js';
 
 
 import 'semantic-ui-css/semantic.min.css'
-import {Container, Divider, Segment} from "semantic-ui-react";
+import {Container, Divider, Icon, Segment} from "semantic-ui-react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Header/>
-            <Divider hidden/>
+            
             <Container>
                 <Segment>
                     <Routes>
@@ -27,7 +27,17 @@ ReactDOM.render(
                     </Routes>
                 </Segment>
             </Container>
+            
             <Divider hidden/>
+            
+            <Container textAlign='center'>
+                <Segment vertical>
+                    <div>cdMir Powered by <a href='https://github.com/HadTeam'>HadTeam</a></div>
+                    <div>
+                        <a href='https://github.com/HadTeam/cdMir'><Icon name='github' /></a>
+                    </div>
+                </Segment>
+            </Container>
         </BrowserRouter>
     
     </React.StrictMode>,
