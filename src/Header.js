@@ -29,7 +29,7 @@ export default function Header() {
     return (
         <header>
             <Menu pointing stackable>
-                <Menu.Item header>SoftwareMirrorList</Menu.Item>
+                <Menu.Item header>cdMir</Menu.Item>
                 <Menu.Item
                     name='home'
                     active={state === 'home'}
@@ -66,7 +66,7 @@ export default function Header() {
                     <Menu.Item
                         name='Github'
                         active={false}
-                        href='https://github.com/HadTeam/SoftwareMirrorList'
+                        href='https://github.com/HadTeam/cdMir'
                     />
                 </Menu.Menu>
             </Menu>

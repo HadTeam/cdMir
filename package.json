@@ -1,5 +1,5 @@
 {
-  "name": "software-mirror-list",
+  "name": "cdmir",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
