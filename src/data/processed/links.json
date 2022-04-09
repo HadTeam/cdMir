@@ -1,0 +1,27 @@
+[
+    {
+        "text": "反馈(CornBlog)",
+        "href": "https://cornworld.cn",
+        "as": "a"
+    },
+    {
+        "text": "Exlg",
+        "href": "https://exlg.cc",
+        "as": "a"
+    },
+    {
+        "text": "OIerSpace",
+        "href": "https://oier.space",
+        "as": "a"
+    },
+    {
+        "text": "HydroOJ",
+        "href": "https://hydro.ac",
+        "as": "a"
+    },
+    {
+        "text": "LOJ",
+        "href": "https://loj.ac",
+        "as": "a"
+    }
+]

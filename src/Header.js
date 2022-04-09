@@ -1,6 +1,8 @@
 import React from 'react';
-import {Container, Menu} from "semantic-ui-react";
+import {Container, Dropdown, Menu} from "semantic-ui-react";
 import {useLocation} from "react-router-dom";
+
+import links from './data/processed/links.json';
 
 export default function Header() {
     const [state, setState] = React.useState('home');
@@ -59,6 +61,13 @@ export default function Header() {
                     </Menu.Item>
                     
                     <Menu.Menu position='right'>
+                        <Dropdown item text='Links' simple options={
+                            links.map((item,index)=>{
+                                item["key"]=index;
+                                return item;
+                            })
+                        } />
+                        
                         <Menu.Item
                             name='Donate'
                             active={false}
