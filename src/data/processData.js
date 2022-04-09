@@ -44,18 +44,25 @@ function getFileType(url) {
 function parseDataFiles() {
     let softwareOri=parseCsvFile('./origin/Software.csv');
     let filesOri=parseCsvFile('./origin/Files.csv');
-    
-    software=softwareOri.map((row, index)=>{``
+    let recommendOri=parseCsvFile('./origin/Recommend.csv');
+    let recommends=recommendOri.sort((a,b)=>{
+        return Date.parse(b[0])-Date.parse(a[0]);
+    }).splice(0,3).map((item)=>{
+        return item[1];
+    });
+    let software=softwareOri.map((row, index)=>{``
         softwareId[index]=row[2];
         return {
             "name": row[0],
             "website": row[3],
             "description": row[1],
-            "filesId": []
+            "filesId": [],
+            "recommend": recommends.includes(row[2]),
+            "slug": row[2]
         }
     });
     
-    files=filesOri.map((row, index)=>{
+    let files=filesOri.map((row, index)=>{
         let currId=softwareId.indexOf(row[0]);
         fileId[index]="file_"+hash(row);
     
@@ -69,7 +76,7 @@ function parseDataFiles() {
                 "source": row[4]==='auto'?getFileSource(row[2]):row[4],
                 "id": fileId[index],
                 "filetype": row[5]==='auto'?getFileType(row[2]):row[5],
-            },
+            }
         };
         if(ret.urlType==="directly") {
             directlyLinks.push(row[2]);

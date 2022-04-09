@@ -1,40 +1,47 @@
 import React, {useEffect} from 'react';
-import {EventEmitter} from "events";
+import {EventEmitter} from 'events';
 
-import {Container, Divider, Grid, Header, Icon, List, Message, Modal, Segment} from "semantic-ui-react";
+import {Container, Divider, Grid, Header, Icon, List, Message, Modal, Segment, SegmentInline} from "semantic-ui-react";
 
 import softwareData from './data/processed/software.json';
 
+const softwareSlug=softwareData.map((item)=>{
+    return item.slug;
+});
+
 const eventEmitter = new EventEmitter();
 
+function SoftwareCard(props) {
+    let slug=props.software.slug;
+    return (
+        <Grid.Column
+            onClick={() => {
+                eventEmitter.emit('openDownloadModal', {type: 'open', slug: slug})
+            }}
+        >
+            <Segment piled style={{height: '100%'}}>
+                <Header>
+                    <Header.Content>
+                        {props.software.name}
+                        <Header.Subheader>
+                            {props.software.description}
+                        </Header.Subheader>
+                    </Header.Content>
+                </Header>
+            </Segment>
+        </Grid.Column>
+    );
+}
+
 function SoftwareList() {
-    
     return (
         <Container>
             <Grid stackable columns={3}>
                 {
-                    softwareData.map((software, index) => {
-                        return (
-                            <Grid.Column
-                                key={'softwareCard' + index}
-                                onClick={() => {
-                                    eventEmitter.emit('openDownloadModal', {type: 'open', index: index})
-                                }}
-                            >
-                                <a href='#'>
-                                    <Segment raised>
-                                        <Header>
-                                            <Header.Content>
-                                                {software.name}
-                                                <Header.Subheader>
-                                                    {software.description}
-                                                </Header.Subheader>
-                                            </Header.Content>
-                                        </Header>
-                                    </Segment>
-                                </a>
-                            </Grid.Column>
-                        );
+                    softwareData.filter((item)=>{
+                        return item.recommend===false;
+                    }).map((item) => {
+                        return (<SoftwareCard software={item} key={'softwareCard_' + item.slug} />)
                     })
                 }
             </Grid>
@@ -48,7 +55,7 @@ function HomeModal() {
     const [state, dispatch] = React.useReducer((state, action) => {
         switch (action.type) {
             case 'open':
-                return {...state, open: true, download: softwareData[action.index].sources};
+                return {...state, open: true, download: softwareData[softwareSlug.indexOf(action.slug)].sources};
             case 'close':
             default:
                 return {state, open: false, download: {}};
@@ -68,7 +75,7 @@ function HomeModal() {
     return (
         <Modal
             open={state.open}
-            onClose={() => dispatch('close')}
+            onClose={() => dispatch({type: 'close'})}
         >
             <Modal.Header>选择下载地址</Modal.Header>
             <Modal.Content>
@@ -146,18 +153,13 @@ export default function Home() {
                     </Header.Content>
                 </Header>
                 <Grid stackable columns={3}>
-                    <Grid.Column>
-                        <Segment>
-                            <Header>
-                                <Header.Content>
-                                    ???
-                                    <Header.Subheader>
-                                        ???
-                                    </Header.Subheader>
-                                </Header.Content>
-                            </Header>
-                        </Segment>
-                    </Grid.Column>
+                    {
+                        softwareData.filter((item)=>{
+                            return item.recommend===true;
+                        }).map((item)=>{
+                            return (<SoftwareCard software={item} key={'softwareCard_' + item.slug} />);
+                        })
+                    }
                 </Grid>
             </Segment>
             
