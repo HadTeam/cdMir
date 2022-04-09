@@ -1,18 +1,18 @@
 import React, {useEffect} from 'react';
 import {EventEmitter} from 'events';
 
-import {Container, Divider, Grid, Header, Icon, List, Message, Modal, Segment, SegmentInline} from "semantic-ui-react";
+import {Container, Divider, Grid, Header, Icon, List, Modal, Segment} from "semantic-ui-react";
 
 import softwareData from './data/processed/software.json';
 
-const softwareSlug=softwareData.map((item)=>{
+const softwareSlug = softwareData.map((item) => {
     return item.slug;
 });
 
 const eventEmitter = new EventEmitter();
 
 function SoftwareCard(props) {
-    let slug=props.software.slug;
+    let slug = props.software.slug;
     return (
         <Grid.Column
             onClick={() => {
@@ -38,10 +38,10 @@ function SoftwareList() {
         <Container>
             <Grid stackable columns={3}>
                 {
-                    softwareData.filter((item)=>{
-                        return item.recommend===false;
+                    softwareData.filter((item) => {
+                        return item.recommend === false;
                     }).map((item) => {
-                        return (<SoftwareCard software={item} key={'softwareCard_' + item.slug} />)
+                        return (<SoftwareCard software={item} key={'softwareCard_' + item.slug}/>)
                     })
                 }
             </Grid>
@@ -122,7 +122,7 @@ export default function Home() {
                         </Header.Subheader>
                     </Header.Content>
                 </Header>
-    
+                
                 {/*<Message icon warning>*/}
                 {/*    <Icon name='question'/>*/}
                 {/*    <Message.Content>*/}
@@ -141,7 +141,7 @@ export default function Home() {
             </Segment>
             
             <Divider hidden/>
-    
+            
             <Segment>
                 <Header as='h3'>
                     <Icon name={'battery full'}/>
@@ -154,17 +154,17 @@ export default function Home() {
                 </Header>
                 <Grid stackable columns={3}>
                     {
-                        softwareData.filter((item)=>{
-                            return item.recommend===true;
-                        }).map((item)=>{
-                            return (<SoftwareCard software={item} key={'softwareCard_' + item.slug} />);
+                        softwareData.filter((item) => {
+                            return item.recommend === true;
+                        }).map((item) => {
+                            return (<SoftwareCard software={item} key={'softwareCard_' + item.slug}/>);
                         })
                     }
                 </Grid>
             </Segment>
             
             <Divider hidden/>
-    
+            
             <Header attached='top' block>
                 <Header.Content>
                     所有软件

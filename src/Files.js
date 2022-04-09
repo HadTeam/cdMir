@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Divider, Grid, Header, Icon, Input, Label, Menu, Popup, Segment, Table} from "semantic-ui-react";
+import {Icon, Input, Label, Menu, Popup, Table} from "semantic-ui-react";
 
 import files from './data/processed/files.json';
 

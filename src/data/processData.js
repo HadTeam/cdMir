@@ -4,31 +4,30 @@ import hash from 'object-hash';
 import * as path from "path";
 import {DateTime} from 'luxon';
 
-let software=[];
-let files=[];
+let software = [];
+let files = [];
 
-let softwareId=[];
-let fileId=[];
+let softwareId = [];
+let fileId = [];
 
-let directlyLinks=[];
+let directlyLinks = [];
 
 function parseCsvFile(path) {
     return csv.parse(fs.readFileSync(path), {delimiter: ',', header: true}).splice(1);
 }
 
-const fileSourceMap={
+const fileSourceMap = {
     "dl-software-mirror.ug0.ltd": "ug0.ltd(Mirror)"
 }
 
 function getFileSource(url) {
-    let urlObj=new URL(url);
-    if(fileSourceMap[urlObj.hostname]!==undefined) {
+    let urlObj = new URL(url);
+    if (fileSourceMap[urlObj.hostname] !== undefined) {
         return fileSourceMap[urlObj.hostname];
-    }
-    else {
-        let arr=urlObj.hostname.split('.');
-        let a=arr.pop(),b=arr.pop();
-        return b+'.'+a;
+    } else {
+        let arr = urlObj.hostname.split('.');
+        let a = arr.pop(), b = arr.pop();
+        return b + '.' + a;
     }
 }
 
@@ -37,21 +36,22 @@ function getFileHash(filename) {
 }
 
 function getFileType(url) {
-    let urlObj=new URL(url);
+    let urlObj = new URL(url);
     return path.extname(urlObj.pathname).substr(1);
 }
 
 function parseDataFiles() {
-    let softwareOri=parseCsvFile('./origin/Software.csv');
-    let filesOri=parseCsvFile('./origin/Files.csv');
-    let recommendOri=parseCsvFile('./origin/Recommend.csv');
-    let recommends=recommendOri.sort((a,b)=>{
-        return Date.parse(b[0])-Date.parse(a[0]);
-    }).splice(0,3).map((item)=>{
+    let softwareOri = parseCsvFile('./origin/Software.csv');
+    let filesOri = parseCsvFile('./origin/Files.csv');
+    let recommendOri = parseCsvFile('./origin/Recommend.csv');
+    let recommends = recommendOri.sort((a, b) => {
+        return Date.parse(b[0]) - Date.parse(a[0]);
+    }).splice(0, 3).map((item) => {
         return item[1];
     });
-    let software=softwareOri.map((row, index)=>{``
-        softwareId[index]=row[2];
+    let software = softwareOri.map((row, index) => {
+        ``
+        softwareId[index] = row[2];
         return {
             "name": row[0],
             "website": row[3],
@@ -62,57 +62,57 @@ function parseDataFiles() {
         }
     });
     
-    let files=filesOri.map((row, index)=>{
-        let currId=softwareId.indexOf(row[0]);
-        fileId[index]="file_"+hash(row);
-    
-        if(currId!==-1) software[currId]["filesId"].push(fileId[index]);
+    let files = filesOri.map((row, index) => {
+        let currId = softwareId.indexOf(row[0]);
+        fileId[index] = "file_" + hash(row);
         
-        let ret={
+        if (currId !== -1) software[currId]["filesId"].push(fileId[index]);
+        
+        let ret = {
             "filename": row[1],
             "url": row[2],
             "urlType": row[3],
             "tags": {
-                "source": row[4]==='auto'?getFileSource(row[2]):row[4],
+                "source": row[4] === 'auto' ? getFileSource(row[2]) : row[4],
                 "id": fileId[index],
-                "filetype": row[5]==='auto'?getFileType(row[2]):row[5],
+                "filetype": row[5] === 'auto' ? getFileType(row[2]) : row[5],
             }
         };
-        if(ret.urlType==="directly") {
+        if (ret.urlType === "directly") {
             directlyLinks.push(row[2]);
-            ret["tags"]["hash"]=getFileHash(row[1]);
+            ret["tags"]["hash"] = getFileHash(row[1]);
         }
         return ret;
     });
     
-    software.forEach((item, index)=>{
-        let filesObj=[];
-        let sources={};
-        item["filesId"].forEach((file)=>{
+    software.forEach((item, index) => {
+        let filesObj = [];
+        let sources = {};
+        item["filesId"].forEach((file) => {
             filesObj.push(files[fileId.indexOf(file)]);
         });
-        filesObj.forEach((file)=>{
-            let fileSource=file["tags"]["source"];
-            if(file.urlType==="directly") {
-                if(!(fileSource in sources)) sources[fileSource]=[];
+        filesObj.forEach((file) => {
+            let fileSource = file["tags"]["source"];
+            if (file.urlType === "directly") {
+                if (!(fileSource in sources)) sources[fileSource] = [];
                 sources[fileSource].push({
                     "filename": file.filename,
                     "url": file.url
                 });
             }
-            if(file.urlType==="multiple") {
-                if(!(fileSource in sources)) sources[fileSource]=[];
+            if (file.urlType === "multiple") {
+                if (!(fileSource in sources)) sources[fileSource] = [];
                 sources[fileSource].push({
                     "filename": "聚合地址",
                     "url": file.url
                 });
             }
         });
-        software[index]["sources"]=sources;
+        software[index]["sources"] = sources;
     });
     
-    if(process.env.COMMITID) {
-        let buildInfo={
+    if (process.env.COMMITID) {
+        let buildInfo = {
             commitId: process.env.COMMITID,
             time: DateTime.now().setZone("Asia/Shanghai").toString()
         };
