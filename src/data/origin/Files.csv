@@ -94,6 +94,6 @@ lemonlime,lemon-win-qt6-x64-RelWithDebInfo.zip,https://dl-software-mirror.ug0.lt
 lemonlime,lemon-Qt6.2.3-Release-arm64.dmg,https://dl-software-mirror.ug0.ltd/lemon-Qt6.2.3-Release-arm64.dmg,directly,auto,auto,dmg
 lemonlime,lemon-Qt6.2.3-Release-x86_64.dmg,https://dl-software-mirror.ug0.ltd/lemon-Qt6.2.3-Release-x86_64.dmg,directly,auto,auto,dmg
 wechat,WeChatSetup.exe,https://dldir1.qq.com/weixin/windows/WeChatSetup.exe,directly,auto,auto,win32
-Wechat,WeChatmacos.dmg,https://dldir1.qq.com/weixin/macos/WeChatmacos.dmg,directly,auto,auto,dmg
+wechat,WeChatmacos.dmg,https://dldir1.qq.com/weixin/macos/WeChatmacos.dmg,directly,auto,auto,dmg
 firefox,,https://www.mozilla.org/zh-CN/firefox/all/#product-desktop-release,multiple,auto,multiple,multiple
 chrome,,https://www.google.cn/chrome/,multiple,auto,multiple,multiple
