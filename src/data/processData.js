@@ -2,6 +2,7 @@ import * as csv from 'csv/sync';
 import * as fs from 'fs';
 import hash from 'object-hash';
 import * as path from "path";
+import {DateTime} from 'luxon';
 
 let software=[];
 let files=[];
@@ -106,7 +107,7 @@ function parseDataFiles() {
     if(process.env.COMMITID) {
         let buildInfo={
             commitId: process.env.COMMITID,
-            time: new Date().toUTCString()
+            time: DateTime.now().setZone("Asia/Shanghai").toString()
         };
         
         fs.writeFileSync("./processed/buildInfo.json", JSON.stringify(buildInfo));
