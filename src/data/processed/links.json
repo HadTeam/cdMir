@@ -3,25 +3,30 @@
         "text": "反馈(CornBlog)",
         "href": "https://cornworld.cn",
         "as": "a"
+        "targer": "_blank"
     },
     {
         "text": "Exlg",
         "href": "https://exlg.cc",
         "as": "a"
+        "targer": "_blank"
     },
     {
         "text": "OIerSpace",
         "href": "https://oier.space",
         "as": "a"
+        "targer": "_blank"
     },
     {
         "text": "HydroOJ",
         "href": "https://hydro.ac",
         "as": "a"
+        "targer": "_blank"
     },
     {
         "text": "LOJ",
         "href": "https://loj.ac",
         "as": "a"
+        "targer": "_blank"
     }
 ]
