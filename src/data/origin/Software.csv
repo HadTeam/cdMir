@@ -1,7 +1,7 @@
 ﻿软件名称,软件描述,软件简称,软件官网
 TDM-GCC,GCC编译器，适合Windows系统,tdmgcc,https://jmeubank.github.io/tdm-gcc/
 LLVM,编译器和工具链技术的集合。,llvm,https://llvm.org/
-Cpeditor,算法竞赛选手们所需要的IDE,cpeditor,https://cpeditor.org/
+CP Editor,算法竞赛选手们所需要的IDE,cpeditor,https://cpeditor.org/
 Jetbrians CLion,跨平台的 C/C++ IDE,clion,https://www.jetbrains.com/clion/
 Jetbrians Idea,符合人体工程学的JAVA IDE,idea,https://www.jetbrains.com/idea/
 Jetbrians PyCharm,面向专业开发者的Python IDE,pycharm,https://www.jetbrains.com/pycharm/
@@ -12,9 +12,9 @@ NeoVim,可扩展的基于Vim的文本编辑器,neovim,http://neovim.io/
 gVim,功能强大的编辑器,gvim,https://www.vim.org/download.php
 Dev-cpp,快速、便携、简单和免费的C/C++ IDE,devcpp,none
 Embarcadero Dev-Cpp,快速、便携、简单和免费的C/C++ IDE,embarcadero_devcpp,https://www.embarcadero.com/cn/free-tools/dev-cpp
-小熊猫Dev-Cpp,跨平台，轻量易用的C/C++集成开发环境,redpanda_devcpp,https://royqh1979.gitee.io/redpandacpp/
-VisualStudio,适用于软件开发人员的编程工具,vs,https://visualstudio.microsoft.com/vs/
-VisualStudioCode,为构建和调试现代网络和云应用程序而重新定义和优化的代码编辑器。,vscode,https://code.visualstudio.com/
+RedPanda Dev-Cpp,跨平台，轻量易用的C/C++集成开发环境,redpanda_devcpp,https://royqh1979.gitee.io/redpandacpp/
+Visual Studio,适用于软件开发人员的编程工具,vs,https://visualstudio.microsoft.com/vs/
+Visual Studio Code,为构建和调试现代网络和云应用程序而重新定义和优化的代码编辑器。,vscode,https://code.visualstudio.com/
 Python,Python是一种编程语言，可以让你快速工作并更有效地整合系统。,python,https://www.python.org/
 Nodejs, JavaScript 运行环境 ,nodejs,https://nodejs.org
 LemonLime,OI 比赛的轻量评测系统,lemonlime,https://github.com/Project-LemonLime/Project_LemonLime
