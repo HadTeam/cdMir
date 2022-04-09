@@ -40,6 +40,7 @@ function getFileType(url) {
     return path.extname(urlObj.pathname).substr(1);
 }
 
+
 function parseDataFiles() {
     let softwareOri = parseCsvFile('./origin/Software.csv');
     let filesOri = parseCsvFile('./origin/Files.csv');
@@ -50,7 +51,6 @@ function parseDataFiles() {
         return item[1];
     });
     let software = softwareOri.map((row, index) => {
-        ``
         softwareId[index] = row[2];
         return {
             "name": row[0],

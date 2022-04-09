@@ -49,7 +49,6 @@ function SoftwareList() {
     );
 }
 
-
 function HomeModal() {
     let listener;
     const [state, dispatch] = React.useReducer((state, action) => {
@@ -122,36 +121,33 @@ export default function Home() {
                         </Header.Subheader>
                     </Header.Content>
                 </Header>
-                
-                {/*<Message icon warning>*/}
-                {/*    <Icon name='question'/>*/}
-                {/*    <Message.Content>*/}
-                {/*        <Message.Header>*/}
-                {/*            需要帮助*/}
-                {/*        </Message.Header>*/}
-                {/*        <List bulleted>*/}
-                {/*            <List.Item key='submitQuestion' href='https://cornworld.cn/other/softwareMirrorList'>提交*/}
-                {/*                建议&问题</List.Item>*/}
-                {/*            <List.Item key='submitIssues' href='https://github.com/HadTeam/cdMir/issues'>提交 Github Issues*/}
-                {/*                (国内可能无法正常打开)</List.Item>*/}
-                {/*            <List.Item key='checkFAQ' href='/about#faq'>查阅 FAQ</List.Item>*/}
-                {/*        </List>*/}
-                {/*    </Message.Content>*/}
-                {/*</Message>*/}
+                {/*
+                    <Message icon warning>
+                        <Icon name='question'/>
+                        <Message.Content>
+                            <Message.Header>
+                                需要帮助
+                            </Message.Header>
+                            <List bulleted>
+                                <List.Item key='submitQuestion' href='https://cornworld.cn/other/softwareMirrorList'>提交
+                                    建议&问题</List.Item>
+                                <List.Item key='submitIssues' href='https://github.com/HadTeam/cdMir/issues'>提交 Github
+                                    Issues
+                                    (国内可能无法正常打开)</List.Item>
+                                <List.Item key='checkFAQ' href='/about#faq'>查阅 FAQ</List.Item>
+                            </List>
+                        </Message.Content>
+                    </Message>
+                */}
             </Segment>
             
             <Divider hidden/>
             
-            <Segment>
-                <Header as='h3'>
-                    <Icon name={'battery full'}/>
-                    <Header.Content>
-                        每周良心软件推荐
-                        <Header.Subheader>
-                            保证不凉心!
-                        </Header.Subheader>
-                    </Header.Content>
-                </Header>
+            <Header attached='top' block>
+                <Icon name={'battery full'}/>
+                <Header.Content>每周良心软件推荐</Header.Content>
+            </Header>
+            <Segment attached='bottom'>
                 <Grid stackable columns={3}>
                     {
                         softwareData.filter((item) => {
@@ -166,9 +162,8 @@ export default function Home() {
             <Divider hidden/>
             
             <Header attached='top' block>
-                <Header.Content>
-                    所有软件
-                </Header.Content>
+                <Icon name='numbered list' />
+                <Header.Content>所有软件</Header.Content>
             </Header>
             <Segment attached='bottom'>
                 <SoftwareList/>

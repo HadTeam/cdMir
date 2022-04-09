@@ -4,17 +4,29 @@ import {Icon, Input, Label, Menu, Popup, Table} from "semantic-ui-react";
 
 import files from './data/processed/files.json';
 
+function HashPopup(props) {
+    return (
+        <Popup
+            on='click'
+            pinned
+            trigger={<Label as='a'>hash: (click)</Label>}
+            positionFixed
+            hideOnScroll
+            position='bottom right'
+        >
+            {
+                Object.keys(props.hashObj).map((hashType) => {
+                    return <Popup.Content>{hashType}: {props.hashObj[hashType]}</Popup.Content>
+                })
+            }
+        </Popup>
+    );
+}
+
 export default function Files() {
     return (
         <div id='body'>
-            <Menu stackable tabular attached='top'>
-                <Menu.Menu position='right'>
-                    <Menu.Item>
-                    
-                    </Menu.Item>
-                </Menu.Menu>
-            </Menu>
-            <Table attached='bottom' singleLine unstackable selectable>
+            <Table attached='bottom' singleLine stackable selectable>
                 <Table.Header>
                     <Table.Row>
                         <Table.HeaderCell>Filename</Table.HeaderCell>
@@ -44,28 +56,12 @@ export default function Files() {
                                                     (Object.keys(item.tags)).map((tag) => {
                                                         switch (tag) {
                                                             case 'hash': {
-                                                                return (
-                                                                    <Popup
-                                                                        content={
-                                                                            Object.keys(item.tags[tag]).map((hash) => {
-                                                                                return <p>{hash}: {item.tags[tag][hash]}</p>
-                                                                            })
-                                                                        }
-                                                                        on='click'
-                                                                        pinned
-                                                                        trigger={
-                                                                            <Label as='a'
-                                                                                   key={'file' + index + 'Tag' + tag}>
-                                                                                hash: (click)
-                                                                            </Label>
-                                                                        }
-                                                                    />
-                                                                );
+                                                                return (<HashPopup hashObj={item.tags[tag]} key={index+tag}/>);
                                                             }
                                                             case 'id':
                                                                 return;
                                                             default:
-                                                                return (<Label>{tag}: {item.tags[tag]}</Label>);
+                                                                return (<Label key={index+tag}>{tag}: {item.tags[tag]}</Label>);
                                                         }
                                                     })
                                                 }

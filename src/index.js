@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
 import Header from './Header.js';
-import Home, {HomeModal} from './Home.js';
+import Home from './Home.js';
 import Files from './Files.js';
 import About from './About.js';
 
