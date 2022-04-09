@@ -143,7 +143,7 @@ export default function Home() {
             
             <Divider hidden/>
             
-            <Header attached='top' block>
+            <Header attached='top' block as='h4'>
                 <Icon name={'battery full'}/>
                 <Header.Content>每周良心软件推荐</Header.Content>
             </Header>
@@ -161,7 +161,7 @@ export default function Home() {
             
             <Divider hidden/>
             
-            <Header attached='top' block>
+            <Header attached='top' block as='h4'>
                 <Icon name='numbered list' />
                 <Header.Content>所有软件</Header.Content>
             </Header>
