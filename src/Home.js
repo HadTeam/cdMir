@@ -130,6 +130,34 @@ export default function Home() {
                     </List>
                 </Message.Content>
             </Message>
+    
+            <Divider hidden/>
+    
+            <Segment>
+                <Header size='large'>
+                    <Icon name={'battery full'}/>
+                    <Header.Content>
+                        每周良心软件推荐
+                        <Header.Subheader>
+                            保证不凉心!
+                        </Header.Subheader>
+                    </Header.Content>
+                </Header>
+                <Grid stackable columns={3}>
+                    <Grid.Column>
+                        <Segment>
+                            <Header>
+                                <Header.Content>
+                                    ???
+                                    <Header.Subheader>
+                                        ???
+                                    </Header.Subheader>
+                                </Header.Content>
+                            </Header>
+                        </Segment>
+                    </Grid.Column>
+                </Grid>
+            </Segment>
             
             <Divider hidden/>
             
