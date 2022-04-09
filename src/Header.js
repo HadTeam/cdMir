@@ -64,11 +64,6 @@ export default function Header() {
                             active={false}
                             href='/about#donate'
                         />
-                        <Menu.Item
-                            name='Github'
-                            active={false}
-                            href='https://github.com/HadTeam/cdMir'
-                        />
                     </Menu.Menu>
                 </Container>
             </Menu>
