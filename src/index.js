@@ -34,7 +34,7 @@ ReactDOM.render(
             <Container textAlign='center'>
                 <Segment vertical>
                     <div>cdMir Powered by <a href='https://github.com/HadTeam'>HadTeam</a></div>
-                    <div>Build: {buildInfo.commitId}</div>
+                    <div>Build: {buildInfo.commitId} | Time: {buildInfo.time}</div>
                     <div>
                         <a href='https://github.com/HadTeam/cdMir'><Icon name='github'/></a>
                     </div>

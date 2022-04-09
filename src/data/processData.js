@@ -105,7 +105,8 @@ function parseDataFiles() {
     
     if(process.env.COMMITID) {
         let buildInfo={
-            commitId: process.env.COMMITID
+            commitId: process.env.COMMITID,
+            time: new Date().toUTCString()
         };
         
         fs.writeFileSync("./processed/buildInfo.json", JSON.stringify(buildInfo));
