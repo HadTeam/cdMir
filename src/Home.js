@@ -105,36 +105,38 @@ function HomeModal() {
 export default function Home() {
     return (
         <div id='home'>
-            <Header as='h3'>
-                <Icon name='settings'/>
-                <Header.Content>
-                    欢迎
-                    <Header.Subheader>
-                        这是一个搜集常用软件镜像下载地址的列表（仅针对中国大陆用户）
-                    </Header.Subheader>
-                </Header.Content>
-            </Header>
-            
-            <Message icon warning>
-                <Icon name='question'/>
-                <Message.Content>
-                    <Message.Header>
-                        需要帮助
-                    </Message.Header>
-                    <List bulleted>
-                        <List.Item key='submitQuestion' href='https://cornworld.cn/other/softwareMirrorList'>提交
-                            建议&问题</List.Item>
-                        <List.Item key='submitIssues' href='https://github.com/HadTeam/cdMir/issues'>提交 Github Issues
-                            (国内可能无法正常打开)</List.Item>
-                        <List.Item key='checkFAQ' href='/about#faq'>查阅 FAQ</List.Item>
-                    </List>
-                </Message.Content>
-            </Message>
+            <Segment>
+                <Header as='h3'>
+                    <Icon name='settings'/>
+                    <Header.Content>
+                        欢迎
+                        <Header.Subheader>
+                            这是一个搜集常用软件镜像下载地址的列表（仅针对中国大陆用户）
+                        </Header.Subheader>
+                    </Header.Content>
+                </Header>
     
+                {/*<Message icon warning>*/}
+                {/*    <Icon name='question'/>*/}
+                {/*    <Message.Content>*/}
+                {/*        <Message.Header>*/}
+                {/*            需要帮助*/}
+                {/*        </Message.Header>*/}
+                {/*        <List bulleted>*/}
+                {/*            <List.Item key='submitQuestion' href='https://cornworld.cn/other/softwareMirrorList'>提交*/}
+                {/*                建议&问题</List.Item>*/}
+                {/*            <List.Item key='submitIssues' href='https://github.com/HadTeam/cdMir/issues'>提交 Github Issues*/}
+                {/*                (国内可能无法正常打开)</List.Item>*/}
+                {/*            <List.Item key='checkFAQ' href='/about#faq'>查阅 FAQ</List.Item>*/}
+                {/*        </List>*/}
+                {/*    </Message.Content>*/}
+                {/*</Message>*/}
+            </Segment>
+            
             <Divider hidden/>
     
             <Segment>
-                <Header size='large'>
+                <Header as='h3'>
                     <Icon name={'battery full'}/>
                     <Header.Content>
                         每周良心软件推荐
@@ -161,7 +163,14 @@ export default function Home() {
             
             <Divider hidden/>
             
-            <SoftwareList/>
+            <Segment>
+                <Header>
+                    <Header.Content>
+                        所有软件
+                    </Header.Content>
+                </Header>
+                <SoftwareList/>
+            </Segment>
             
             <HomeModal/>
         </div>

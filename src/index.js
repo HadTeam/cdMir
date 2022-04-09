@@ -19,14 +19,12 @@ ReactDOM.render(
             <Header/>
             
             <Container>
-                <Segment>
-                    <Routes>
-                        <Route path='/' element={<Home/>}>
-                        </Route>
-                        <Route path="/files" element={<Files/>}/>
-                        <Route path="/about" element={<About/>}/>
-                    </Routes>
-                </Segment>
+                <Routes>
+                    <Route path='/' element={<Home/>}>
+                    </Route>
+                    <Route path="/files" element={<Files/>}/>
+                    <Route path="/about" element={<About/>}/>
+                </Routes>
             </Container>
             
             <Divider hidden/>
