@@ -2,16 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
+import 'fomantic-ui-css/semantic.min.css';
+import '@fontsource/jetbrains-mono';
+import {Container, Divider, Icon, Segment} from "semantic-ui-react";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+
 import Header from './Header.js';
 import Home from './Home.js';
 import Files from './Files.js';
 import About from './About.js';
 
-import buildInfo from './data/processed/buildInfo.json'
-
-import 'semantic-ui-css/semantic.min.css'
-import {Container, Divider, Icon, Segment} from "semantic-ui-react";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import buildInfo from './data/processed/buildInfo.json';
 
 ReactDOM.render(
     <React.StrictMode>
