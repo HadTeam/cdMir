@@ -32,11 +32,13 @@ export default function Files() {
                         <Table.HeaderCell>Filename</Table.HeaderCell>
                         <Table.HeaderCell>Tags</Table.HeaderCell>
                         <Table.HeaderCell textAlign='right'>
-                            <Input
-                                transparent
-                                icon='search'
-                                placeholder='Search...'
-                            />
+                            {/*
+                                <Input
+                                    transparent
+                                    icon='search'
+                                    placeholder='Search...'
+                                />
+                            */}
                         </Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
