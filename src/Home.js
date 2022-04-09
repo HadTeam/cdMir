@@ -162,13 +162,13 @@ export default function Home() {
             </Segment>
             
             <Divider hidden/>
-            
-            <Segment>
-                <Header>
-                    <Header.Content>
-                        所有软件
-                    </Header.Content>
-                </Header>
+    
+            <Header attached='top' block>
+                <Header.Content>
+                    所有软件
+                </Header.Content>
+            </Header>
+            <Segment attached='bottom'>
                 <SoftwareList/>
             </Segment>
             
