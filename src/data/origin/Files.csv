@@ -20,6 +20,13 @@ cpeditor,cpeditor-6.9.4-windows-x64-portable-with-gcc-11.2.0-LLVM-12.0.1.zip,htt
 cpeditor,cpeditor-6.9.4-linux-amd64.deb,https://github.com/cpeditor/cpeditor/releases/download/6.9.4/cpeditor-6.9.4-linux-amd64.deb,directly,auto,auto,linux_deb
 cpeditor,cpeditor-6.9.4-macos-x64.dmg,https://github.com/cpeditor/cpeditor/releases/download/6.9.4/cpeditor-6.9.4-macos-x64.dmg,directly,auto,auto,macos
 cpeditor,cpeditor-6.9.4-linux-x86_64.AppImage,https://github.com/cpeditor/cpeditor/releases/download/6.9.4/cpeditor-6.9.4-linux-x86_64.AppImage,directly,auto,auto,appimage
+cpeditor,cpeditor-6.9.4-windows-x86-setup-with-gcc-11.2.0-LLVM-12.0.1.exe,https://dl-software-mirror.ug0.ltd/cpeditor-6.9.4-windows-x86-setup-with-gcc-11.2.0-LLVM-12.0.1.exe,directly,auto,auto,win32
+cpeditor.,cpeditor-6.9.4-windows-x86-portable-with-gcc-11.2.0-LLVM-12.0.1.zip,https://dl-software-mirror.ug0.ltd/cpeditor-6.9.4-windows-x86-portable-with-gcc-11.2.0-LLVM-12.0.1.zip,directly,auto,auto,win32
+cpeditor,cpeditor-6.9.4-windows-x64-setup-with-gcc-11.2.0-LLVM-12.0.1.exe,https://dl-software-mirror.ug0.ltd/cpeditor-6.9.4-windows-x64-setup-with-gcc-11.2.0-LLVM-12.0.1.exe,directly,auto,auto,win64
+cpeditor,cpeditor-6.9.4-windows-x64-portable-with-gcc-11.2.0-LLVM-12.0.1.zip,https://dl-software-mirror.ug0.ltd/cpeditor-6.9.4-windows-x64-portable-with-gcc-11.2.0-LLVM-12.0.1.zip,directly,auto,auto,win64
+cpeditor,cpeditor-6.9.4-linux-amd64.deb,https://dl-software-mirror.ug0.ltd/cpeditor-6.9.4-linux-amd64.deb,directly,auto,auto,linux_deb
+cpeditor,cpeditor-6.9.4-macos-x64.dmg,https://dl-software-mirror.ug0.ltd/cpeditor-6.9.4-macos-x64.dmg,directly,auto,auto,macos
+cpeditor,cpeditor-6.9.4-linux-x86_64.AppImage,https://dl-software-mirror.ug0.ltd/cpeditor-6.9.4-linux-x86_64.AppImage,directly,auto,auto,appimage
 clion,,https://www.jetbrains.com/clion/download/,multiple,auto,multiple,multiple
 idea,,https://www.jetbrains.com/idea/download/,multiple,auto,multiple,multiple
 pycharm,,https://www.jetbrains.com/pycharm/download/,multiple,auto,multiple,multiple
