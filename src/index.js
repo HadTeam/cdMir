@@ -4,14 +4,14 @@ import reportWebVitals from './reportWebVitals';
 
 import 'fomantic-ui-css/semantic.min.css';
 import '@fontsource/jetbrains-mono';
-import {Container, Divider, Icon, Segment} from "semantic-ui-react";
-import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import {Container, Divider, Icon, Segment} from 'semantic-ui-react';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 import Header from './Header.js';
 import Home from './Home.js';
 import Files from './Files.js';
 import About from './About.js';
-import NoMatch from "./NoMatch";
+import NoMatch from './NoMatch';
 
 import buildInfo from './data/processed/buildInfo.json';
 
@@ -24,10 +24,10 @@ ReactDOM.render(
                 <Routes>
                     <Route path='/' element={<Home/>}>
                     </Route>
-                    <Route path="/files" element={<Files/>}/>
-                    <Route path="/about" element={<About/>}/>
+                    <Route path='/files' element={<Files/>}/>
+                    <Route path='/about' element={<About/>}/>
                     
-                    <Route path="*" element={<NoMatch/>}/>
+                    <Route path='*' element={<NoMatch/>}/>
                 </Routes>
             </Container>
             
@@ -45,7 +45,7 @@ ReactDOM.render(
         </BrowserRouter>
     
     </React.StrictMode>,
-    document.getElementById('root')
+    document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function

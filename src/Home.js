@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {EventEmitter} from 'events';
 
-import {Container, Divider, Grid, Header, Icon, List, Modal, Segment} from "semantic-ui-react";
+import {Container, Divider, Grid, Header, Icon, List, Modal, Segment} from 'semantic-ui-react';
 
 import softwareData from './data/processed/software.json';
 
@@ -12,11 +12,11 @@ const softwareSlug = softwareData.map((item) => {
 const eventEmitter = new EventEmitter();
 
 function SoftwareCard(props) {
-    let slug = props.software.slug;
+    const slug = props.software.slug;
     return (
         <Grid.Column
             onClick={() => {
-                eventEmitter.emit('openDownloadModal', {type: 'open', slug: slug})
+                eventEmitter.emit('openDownloadModal', {type: 'open', slug: slug});
             }}
         >
             <Segment piled style={{height: '100%'}}>
@@ -41,7 +41,7 @@ function SoftwareList() {
                     softwareData.filter((item) => {
                         return item.recommend === false;
                     }).map((item) => {
-                        return (<SoftwareCard software={item} key={'softwareCard_' + item.slug}/>)
+                        return (<SoftwareCard software={item} key={'softwareCard_' + item.slug}/>);
                     })
                 }
             </Grid>
@@ -62,12 +62,12 @@ function HomeModal() {
     }, {open: false, download: {}});
     
     useEffect(() => {
-        listener = eventEmitter.addListener("openDownloadModal", (data) => {
+        listener = eventEmitter.addListener('openDownloadModal', (data) => {
             dispatch(data);
             
             return function cleanup() {
                 eventEmitter.removeListener(listener);
-            }
+            };
         });
     }, []);
     
@@ -162,7 +162,7 @@ export default function Home() {
             <Divider hidden/>
             
             <Header attached='top' block as='h4'>
-                <Icon name='numbered list' />
+                <Icon name='numbered list'/>
                 <Header.Content>所有软件</Header.Content>
             </Header>
             <Segment attached='bottom'>

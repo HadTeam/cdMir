@@ -1,6 +1,6 @@
 import React from 'react';
-import {Container, Dropdown, Menu} from "semantic-ui-react";
-import {useLocation} from "react-router-dom";
+import {Container, Dropdown, Menu} from 'semantic-ui-react';
+import {useLocation} from 'react-router-dom';
 
 import links from './data/processed/links.json';
 
@@ -19,12 +19,12 @@ export default function Header() {
                 return 'about';
         }
     };
-    let location = useLocation();
-    let current = resolvePathname(location.pathname);
+    const location = useLocation();
+    const current = resolvePathname(location.pathname);
     if (current !== state) setState(current);
     
     if (location.hash !== '') {
-        let element = document.getElementById(location.hash.replace('#', ''));
+        const element = document.getElementById(location.hash.replace('#', ''));
         if (element) element.scrollIntoView();
     }
     
@@ -62,11 +62,12 @@ export default function Header() {
                     
                     <Menu.Menu position='right'>
                         <Dropdown item text='Links' simple options={
-                            links.map((item,index)=>{
-                                item["key"]=index;
+                            links.map((item, index) => {
+                                item['key'] = index;
                                 return item;
                             })
-                        } />
+                        }
+                        />
                         
                         <Menu.Item
                             name='Donate'

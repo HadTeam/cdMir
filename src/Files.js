@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Icon, Input, Label, Menu, Popup, Table} from "semantic-ui-react";
+import {Icon, Label, Popup, Table} from 'semantic-ui-react';
 
 import files from './data/processed/files.json';
 
@@ -16,7 +16,7 @@ function HashPopup(props) {
         >
             {
                 Object.keys(props.hashObj).map((hashType) => {
-                    return <Popup.Content>{hashType}: {props.hashObj[hashType]}</Popup.Content>
+                    return <Popup.Content>{hashType}: {props.hashObj[hashType]}</Popup.Content>;
                 })
             }
         </Popup>
@@ -50,7 +50,7 @@ export default function Files() {
                                     <Table.Row key={'fileListItem' + index}>
                                         <Table.Cell singleLine width={5}>
                                             <Icon name='text file'/>
-                                            <a href={item.url} target='_blank'>{item.filename}</a>
+                                            <a href={item.url} target='_blank' rel="noreferrer">{item.filename}</a>
                                         </Table.Cell>
                                         <Table.Cell colSpan={2}>
                                             <Label.Group>
@@ -58,12 +58,14 @@ export default function Files() {
                                                     (Object.keys(item.tags)).map((tag) => {
                                                         switch (tag) {
                                                             case 'hash': {
-                                                                return (<HashPopup hashObj={item.tags[tag]} key={index+tag}/>);
+                                                                return (<HashPopup hashObj={item.tags[tag]}
+                                                                                   key={index + tag}/>);
                                                             }
                                                             case 'id':
                                                                 return;
                                                             default:
-                                                                return (<Label key={index+tag}>{tag}: {item.tags[tag]}</Label>);
+                                                                return (<Label
+                                                                    key={index + tag}>{tag}: {item.tags[tag]}</Label>);
                                                         }
                                                     })
                                                 }

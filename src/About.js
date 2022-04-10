@@ -1,5 +1,5 @@
-import {Accordion, Card, Container, Divider, Icon} from "semantic-ui-react";
-import {isMobile} from "react-device-detect";
+import {Accordion, Card, Container, Divider, Icon} from 'semantic-ui-react';
+import {isMobile} from 'react-device-detect';
 
 import contributors from './data/processed/contributors.json';
 import faqs from './data/processed/faqs.json';
