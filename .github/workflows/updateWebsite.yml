@@ -59,3 +59,16 @@ jobs:
           cos_region: ap-guangzhou
           local_path: build
           clean: true
+      - name: Install Python2
+        uses: actions/setup-python@v3
+        with:
+          python-version: '2.x'
+          architecture: 'x64'
+      - name: refresh CDN
+        run: |
+          pip install tccli
+          tccli cdn PurgeUrlsCache --Area mainland --cli-unfold-argument --Urls https://mir.ug0.ltd
+        with:
+          TENCENTCLOUD_SECRET_ID: ${{ secrets.SECRET_ID }}
+          TENCENTCLOUD_SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          TENCENTCLOUD_REGION: ap-guangzhou
