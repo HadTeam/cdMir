@@ -1,6 +1,5 @@
-import React from 'react';
-
 import {Icon, Label, Popup, Table} from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
 import files from './data/processed/files.json';
 
@@ -15,13 +14,16 @@ function HashPopup(props) {
             position='bottom right'
         >
             {
-                Object.keys(props.hashObj).map((hashType) => {
-                    return <Popup.Content>{hashType}: {props.hashObj[hashType]}</Popup.Content>;
+                Object.keys(props.hashObj).map((hashType, index) => {
+                    return (<Popup.Content key={index}>{hashType}: {props.hashObj[hashType]}</Popup.Content>);
                 })
             }
         </Popup>
     );
 }
+HashPopup.propTypes={
+    hashObj: PropTypes.object
+};
 
 export default function Files() {
     return (

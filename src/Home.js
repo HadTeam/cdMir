@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {EventEmitter} from 'events';
+import PropTypes from 'prop-types';
 
 import {Container, Divider, Grid, Header, Icon, List, Modal, Segment} from 'semantic-ui-react';
 
@@ -32,6 +33,13 @@ function SoftwareCard(props) {
         </Grid.Column>
     );
 }
+SoftwareCard.propTypes={
+    software: {
+        name: PropTypes.string,
+        slug: PropTypes.string,
+        destination: PropTypes.string
+    }
+};
 
 function SoftwareList() {
     return (
