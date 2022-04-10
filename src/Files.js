@@ -45,7 +45,7 @@ export default function Files() {
                 <Table.Header>
                     <Table.Row>
                         <Table.HeaderCell>Filename</Table.HeaderCell>
-                        <Table.HeaderCell>Tags</Table.HeaderCell>
+                        <Table.HeaderCell textAlign='right'>Tags</Table.HeaderCell>
                         <Table.HeaderCell textAlign='right'>
                             {/*
                                 <Input
@@ -66,7 +66,7 @@ export default function Files() {
                                         <Icon name='text file'/>
                                         <a href={item.url} target='_blank' rel="noreferrer">{item.filename}</a>
                                     </Table.Cell>
-                                    <Table.Cell colSpan={2}>
+                                    <Table.Cell colSpan={2} textAlign='right'>
                                         <Label.Group>
                                             {
                                                 (Object.keys(item.tags)).map((tag) => {
