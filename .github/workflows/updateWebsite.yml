@@ -68,7 +68,7 @@ jobs:
         run: |
           pip install tccli
           tccli cdn PurgeUrlsCache --Area mainland --cli-unfold-argument --Urls https://mir.ug0.ltd
-        with:
+        env:
           TENCENTCLOUD_SECRET_ID: ${{ secrets.SECRET_ID }}
           TENCENTCLOUD_SECRET_KEY: ${{ secrets.SECRET_KEY }}
           TENCENTCLOUD_REGION: ap-guangzhou
