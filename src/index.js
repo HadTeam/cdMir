@@ -5,12 +5,13 @@ import reportWebVitals from './reportWebVitals';
 import 'fomantic-ui-css/semantic.min.css';
 import '@fontsource/jetbrains-mono';
 import {Container, Divider, Icon, Segment} from "semantic-ui-react";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 
 import Header from './Header.js';
 import Home from './Home.js';
 import Files from './Files.js';
 import About from './About.js';
+import NoMatch from "./NoMatch";
 
 import buildInfo from './data/processed/buildInfo.json';
 
@@ -25,6 +26,8 @@ ReactDOM.render(
                     </Route>
                     <Route path="/files" element={<Files/>}/>
                     <Route path="/about" element={<About/>}/>
+                    
+                    <Route path="*" element={<NoMatch/>}/>
                 </Routes>
             </Container>
             
