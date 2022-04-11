@@ -106,7 +106,7 @@ export default function Files() {
                         <Table.HeaderCell>Filename</Table.HeaderCell>
                         <Table.HeaderCell>
                             <Search
-                                icon='search'
+                                fluid
                                 placeholder='Search...'
                                 loading={loading}
                                 onSearchChange={search}
