@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "events": "^3.3.0",
     "fomantic-ui-css": "github:CornWorld/Fomantic-UI-CSS",
+    "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-device-detect": "^2.1.2",
     "react-dom": "^17.0.2",
