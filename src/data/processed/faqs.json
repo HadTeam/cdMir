@@ -12,6 +12,6 @@
     {
         "key": "aboutWebsiteUpdate",
         "title": "Github 提交后网站多久会更新?",
-        "content": "我们在 Github 部署了自动上传，在更新后大约 2min 会上传至网站更目录，而 CDN 缓存每 30min 自动刷新一次。"
+        "content": "我们在 Github 部署了自动上传，在更新后大约 2min 会上传至网站根目录，而 CDN 缓存每 30min 自动刷新一次。"
     }
 ]
