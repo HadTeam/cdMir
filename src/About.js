@@ -25,7 +25,12 @@ export default function About() {
                 </Divider>
                 <Divider hidden/>
                 <Container>
-                
+                    <p>这是一个软件镜像站，旨在通过搜集或搭建镜像的方式，为处于中国大陆的用户提供高速下载服务。</p>
+                    <p>如果您需要软件并未被 cdMir 收录，请联系我们（包括但不限于 发布Issues、社交媒体联系、邮箱联系），我们会考虑并添加。</p>
+    
+                    <p>如果您认为我们值得支持，请 star 我们的<a href='https://github.com/HadTeam/cdMir'>仓库</a>！</p>
+    
+                    <p><a href='https://github.com/HadTeam/cdMir/blob/main/README.md'>[更多介绍可参见 README.md 文件]</a></p>
                 </Container>
                 
                 <Divider horizontal as='h4' id='faq'>
