@@ -7,7 +7,7 @@
     {
         "key": "aboutMirrorDownloadSpeed",
         "title": "镜像下载的速度怎么样?",
-        "content": "目前 dl-software-mirror.ug0.ltd 的下载速度限制为最高 25000KBps，cr.had.xin 的下载速度取决于世纪互联 sp 的下载速度(实测最高应该在 90000LNps 左右)。 上述镜像下载速度都可以跑满大部分家用带宽！"
+        "content": "目前 dl-software-mirror.ug0.ltd 的下载速度限制为最高 25000KBps，cr.had.xin 的下载速度取决于世纪互联 sp 的下载速度(实测最高应该在 90000KBps 左右)。 上述镜像下载速度都可以跑满大部分家用带宽！"
     },
     {
         "key": "aboutWebsiteUpdate",
