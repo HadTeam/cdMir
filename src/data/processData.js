@@ -40,6 +40,18 @@ function getFileType(url) {
     return path.extname(urlObj.pathname).substr(1);
 }
 
+function addFastGitMirror(filesOri) {
+    let ret=[];
+    filesOri.forEach((row)=>{
+        let source=row[4] === 'auto' ? getFileSource(row[2]) : row[4];
+        if(source==='github.com') {
+            ret.push(row.map((item, index)=>{
+                return index===2? item.replace('github.com','hub.fastgit.xyz') : item;
+            }));
+        }
+    });
+    return ret;
+}
 
 function parseDataFiles() {
     let softwareOri = parseCsvFile('./origin/Software.csv');
@@ -50,7 +62,9 @@ function parseDataFiles() {
     }).splice(0, 3).map((item) => {
         return item[1];
     });
-    let software = softwareOri.map((row, index) => {
+    filesOri=filesOri.concat(addFastGitMirror(filesOri));
+    
+    software = softwareOri.map((row, index) => {
         softwareId[index] = row[2];
         return {
             "name": row[0],
@@ -62,7 +76,7 @@ function parseDataFiles() {
         }
     });
     
-    let files = filesOri.map((row, index) => {
+    files = filesOri.map((row, index) => {
         let currId = softwareId.indexOf(row[0]);
         fileId[index] = "file_" + hash(row);
         
