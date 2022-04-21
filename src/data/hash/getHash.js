@@ -51,8 +51,9 @@ program
     .argument("<string>","Path or paths, if there are multiple files, use the separator you set(',' for default) to split the paths.")
     .option("-s,--separator <char>", "separator character", ',')
     .option("-j,--json","output json")
-    .option("-o,--output <string>", "the path to output result (NOTE: if this option is set, the json option will be set automatically.)")
+    .option("-o,--output <string>", "the path to output result (NOTE: if this option is set, 'json' option will be set automatically.)")
     .option("-d,--dir <string>","set a default dir for files")
+    .option("-u,--update","update data to a file (NOTE: if 'output' option isn't set, this option will have no effects.)")
     .action((arg, options)=>{
         let paths=arg.split(options.separator);
         let fileList=[];
@@ -83,7 +84,22 @@ program
         );
         console.log("Done!");
         if(options.output) {
-            fs.writeFileSync(options.output, JSON.stringify(hashData));
+            try {
+                if(options.update && fs.existsSync(options.output)) {
+                    let keys=Object.keys(hashData);
+                    let originData=JSON.parse(fs.readFileSync(options.output).toString());
+                    for(let key in originData) {
+                        if(!keys[key]) {
+                            hashData[key]=originData[key];
+                            keys.push(key);
+                        }
+                    }
+                }
+                fs.writeFileSync(options.output, JSON.stringify(hashData));
+            }
+            catch (err) {
+                console.log(err.toString());
+            }
         }
         else {
             if(options.json) console.log(JSON.stringify(hashData));
