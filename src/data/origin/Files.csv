@@ -62,9 +62,9 @@ devcpp,Dev-Cpp 5.11 TDM-GCC 4.9.2 Setup.exe,https://nchc.dl.sourceforge.net/proj
 devcpp,Dev-Cpp 5.11 TDM-GCC 4.9.2 Setup.exe,https://dl-software-mirror.ug0.ltd/Dev-Cpp%205.11%20TDM-GCC%204.9.2%20Setup.exe,directly,auto,auto,win32
 embarcadero_devcpp,Embarcadero_Dev-Cpp_6.3_TDM-GCC_9.2_Setup.exe,https://nchc.dl.sourceforge.net/project/embarcadero-devcpp/v6.3/Embarcadero_Dev-Cpp_6.3_TDM-GCC_9.2_Setup.exe,directly,auto,auto,win32
 embarcadero_devcpp,Embarcadero_Dev-Cpp_6.3_TDM-GCC_9.2_Setup.exe,https://dl-software-mirror.ug0.ltd/Embarcadero_Dev-Cpp_6.3_TDM-GCC_9.2_Setup.exe,directly,auto,auto,win32
-redpanda_devcpp,RedPanda.C .1.0.0.win64.MinGW-w64 X86_64 GCC 10.3.Setup.exe,https://gitee.com/royqh1979/RedPanda-CPP/attach_files/999998/download/RedPanda.C%20%20.1.0.0.win64.MinGW-w64%20X86_64%20GCC%2010.3.Setup.exe,directly,auto,auto,win64
-redpanda_devcpp,RedPanda.C .1.0.0.win32.MinGW-w64 i686 GCC 10.3.Setup.exe,https://gitee.com/royqh1979/RedPanda-CPP/attach_files/1000000/download/RedPanda.C%20%20.1.0.0.win32.MinGW-w64%20i686%20GCC%2010.3.Setup.exe,directly,auto,auto,win32
-redpanda_devcpp,RedPanda.C .1.0.0.win64.MinGW-w64 X86_64 GCC 10.3.Setup.exe,https://dl-software-mirror.ug0.ltd/RedPanda.C .1.0.0.win64.MinGW-w64 X86_64 GCC 10.3.Setup.exe,directly,auto,auto,win64
+redpanda_devcpp,小熊猫C .1.0.6.win64.GCC 64位 11.2.Setup.exe,https://gitee.com/royqh1979/RedPanda-CPP/attach_files/1046893/download/%E5%B0%8F%E7%86%8A%E7%8C%ABC%20%20.1.0.6.win64.GCC%2064%E4%BD%8D%2011.2.Setup.exe,directly,auto,auto,win64
+redpanda_devcpp,RedPanda.C .1.0.0.win32.MinGW-w64 i686 GCC 10.3.Setup.exe,https://gitee.com/royqh1979/RedPanda-CPP/attach_files/1046894/download/%E5%B0%8F%E7%86%8A%E7%8C%ABC%20%20.1.0.6.win32.GCC%208.1.Setup.exe,directly,auto,auto,win32
+redpanda_devcpp,小熊猫C .1.0.6.win32.GCC 8.1.Setup.exe,https://dl-software-mirror.ug0.ltd/RedPanda.C .1.0.0.win64.MinGW-w64 X86_64 GCC 10.3.Setup.exe,directly,auto,auto,win64
 redpanda_devcpp,RedPanda.C .1.0.0.win32.MinGW-w64 i686 GCC 10.3.Setup.exe,https://dl-software-mirror.ug0.ltd/RedPanda.C .1.0.0.win32.MinGW-w64 i686 GCC 10.3.Setup.exe,directly,auto,auto,win32
 vs,,https://visualstudio.microsoft.com/zh-hans/downloads/,multiple,auto,multiple,multiple
 vscode,,https://code.visualstudio.com/Download,multiple,auto,multiple,multiple
