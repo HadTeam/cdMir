@@ -2,51 +2,28 @@
   "name": "cdmir",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@fontsource/jetbrains-mono": "^4.5.5",
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
-    "events": "^3.3.0",
-    "fomantic-ui-css": "github:CornWorld/Fomantic-UI-CSS",
-    "lodash": "^4.17.21",
-    "react": "^17.0.2",
-    "react-device-detect": "^2.1.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.2",
-    "react-scripts": "5.0.0",
-    "semantic-ui-react": "^2.1.2",
-    "web-vitals": "^2.1.4",
-    "webpack": "^5.70.0"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@fontsource/jetbrains-mono": "^4.5.9",
+    "@mui/material": "^5.8.7",
+    "babel-eslint": "^10.1.0",
+    "next": "12.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "eslint": "^8.13.0",
-    "eslint-plugin-react": "^7.29.4",
-    "history": "^5.3.0",
-    "prop-types": "^15.8.1"
+    "@types/node": "18.0.3",
+    "@types/react": "18.0.15",
+    "@types/react-dom": "18.0.6",
+    "eslint": "^8.19.0",
+    "eslint-config-next": "12.2.1",
+    "typescript": "4.7.4"
   }
 }
