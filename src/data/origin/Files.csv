@@ -109,3 +109,8 @@ cchv2,CCHv2.v2.0-beta-35.win64.zip,https://github.com/CodeforcesContestHelper/CC
 cchv2,CCHv2.v2.0-beta-35.linux32.zip,https://github.com/CodeforcesContestHelper/CCHv2/releases/download/v2.0-beta-35/CCHv2.v2.0-beta-35.linux32.zip,directly,auto,auto,linux32
 cchv2,CCHv2.v2.0-beta-35.linux64.zip,https://github.com/CodeforcesContestHelper/CCHv2/releases/download/v2.0-beta-35/CCHv2.v2.0-beta-35.linux64.zip,directly,auto,auto,linux64
 cchv2,CCHv2.v2.0-beta-35.osx64.zip,https://github.com/CodeforcesContestHelper/CCHv2/releases/download/v2.0-beta-35/CCHv2.v2.0-beta-35.osx64.zip,directly,auto,auto,zip(macos)
+cchv2,CCHv2.v2.0-beta-35.win32.zip,https://dl-software-mirror.ug0.ltd/CCHv2.v2.0-beta-35.win32.zip,directly,auto,auto,win32
+cchv2,CCHv2.v2.0-beta-35.win64.zip,https://dl-software-mirror.ug0.ltd/CCHv2.v2.0-beta-35.win64.zip,directly,auto,auto,win64
+cchv2,CCHv2.v2.0-beta-35.linux32.zip,https://dl-software-mirror.ug0.ltd/CCHv2.v2.0-beta-35.linux32.zip,directly,auto,auto,linux32
+cchv2,CCHv2.v2.0-beta-35.linux64.zip,https://dl-software-mirror.ug0.ltd/CCHv2.v2.0-beta-35.linux64.zip,directly,auto,auto,linux64
+cchv2,CCHv2.v2.0-beta-35.osx64.zip,https://dl-software-mirror.ug0.ltd/CCHv2.v2.0-beta-35.osx64.zip,directly,auto,auto,zip(macos)
