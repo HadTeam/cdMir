@@ -104,7 +104,8 @@ wechat,WeChatSetup.exe,https://dldir1.qq.com/weixin/windows/WeChatSetup.exe,dire
 wechat,WeChatmacos.dmg,https://dldir1.qq.com/weixin/macos/WeChatmacos.dmg,directly,auto,auto,dmg
 firefox,,https://www.mozilla.org/zh-CN/firefox/all/#product-desktop-release,multiple,auto,multiple,multiple
 chrome,,https://www.google.cn/chrome/,multiple,auto,multiple,multiple
-cchv2,CCHv2.v2.0-beta-31.win32.zip,https://github.com/CodeforcesContestHelper/CCHv2/releases/download/v2.0-beta-31/CCHv2.v2.0-beta-31.win32.zip,directly,auto,auto,win32
-cchv2,CCHv2.v2.0-beta-31.win64.zip,https://github.com/CodeforcesContestHelper/CCHv2/releases/download/v2.0-beta-31/CCHv2.v2.0-beta-31.win64.zip,directly,auto,auto,win64
-cchv2,CCHv2.v2.0-beta-31.linux32.zip,https://github.com/CodeforcesContestHelper/CCHv2/releases/download/v2.0-beta-31/CCHv2.v2.0-beta-31.linux32.zip,directly,auto,auto,linux32
-cchv2,CCHv2.v2.0-beta-31.linux64.zip,https://github.com/CodeforcesContestHelper/CCHv2/releases/download/v2.0-beta-31/CCHv2.v2.0-beta-31.linux64.zip,directly,auto,auto,linux64
+cchv2,CCHv2.v2.0-beta-35.win32.zip,https://github.com/CodeforcesContestHelper/CCHv2/releases/download/v2.0-beta-35/CCHv2.v2.0-beta-35.win32.zip,directly,auto,auto,win32
+cchv2,CCHv2.v2.0-beta-35.win64.zip,https://github.com/CodeforcesContestHelper/CCHv2/releases/download/v2.0-beta-35/CCHv2.v2.0-beta-35.win64.zip,directly,auto,auto,win64
+cchv2,CCHv2.v2.0-beta-35.linux32.zip,https://github.com/CodeforcesContestHelper/CCHv2/releases/download/v2.0-beta-35/CCHv2.v2.0-beta-35.linux32.zip,directly,auto,auto,linux32
+cchv2,CCHv2.v2.0-beta-35.linux64.zip,https://github.com/CodeforcesContestHelper/CCHv2/releases/download/v2.0-beta-35/CCHv2.v2.0-beta-35.linux64.zip,directly,auto,auto,linux64
+cchv2,CCHv2.v2.0-beta-35.osx64.zip,https://github.com/CodeforcesContestHelper/CCHv2/releases/download/v2.0-beta-35/CCHv2.v2.0-beta-35.osx64.zip,directly,auto,auto,zip(macos)
