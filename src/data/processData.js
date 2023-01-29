@@ -46,7 +46,7 @@ function addFastGitMirror(filesOri) {
         let source=row[4] === 'auto' ? getFileSource(row[2]) : row[4];
         if(source==='github.com') {
             ret.push(row.map((item, index)=>{
-                return index===2? item.replace('github.com','hub.fastgit.xyz') : item;
+                return index===2? item.replace('github.com','hub.fgit.ml') : item;
             }));
         }
     });
