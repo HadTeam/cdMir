@@ -1,2 +1,2 @@
-## SoftwareMirrorList-软件下载镜像列表
+## cdMir Crawler - Crawler for the cdMir database
 

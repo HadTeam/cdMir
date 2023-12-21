@@ -1,0 +1,12 @@
+.idea
+dist
+node_modules
+*.swp
+
+*.log
+*.tmp
+
+*.yml
+*.yaml
+
+*.ini
