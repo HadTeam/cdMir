@@ -1,5 +1,6 @@
 import req from "../req.js";
 import * as cheerio from "cheerio";
+import { config } from "../../index.js";
 
 /**
  * Sourceforge Provider
@@ -26,7 +27,7 @@ export default async (params: SourceforgeProviderParams): Promise<DownloadParam[
 
 const fetchTree = async (url: string, newerThan: Date | undefined): Promise<DownloadParam[]> => {
 	const ret: DownloadParam[] = [];
-	const res = await req({ url: url, method: "GET", siteMaxConn: 15 });
+	const res = await req({ url: url, method: "GET", siteMaxConn: config.sourceforge.maxConn });
 
 	const hash = new Map<string, HashValue>();
 
