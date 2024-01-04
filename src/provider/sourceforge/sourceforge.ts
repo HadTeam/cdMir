@@ -22,21 +22,21 @@ export default async (params: SourceforgeProviderParams): Promise<DownloadParam[
 		default:
 			throw new Error("Invalid resource type");
 	}
-}
+};
 
 const fetchTree = async (url: string, newerThan: Date | undefined): Promise<DownloadParam[]> => {
-	let ret: DownloadParam[] = [];
-	let res = await req({ url: url, method: "GET", siteMaxConn: 15 });
+	const ret: DownloadParam[] = [];
+	const res = await req({ url: url, method: "GET", siteMaxConn: 15 });
 
-	let hash = new Map<string, HashValue>();
+	const hash = new Map<string, HashValue>();
 
 	// Get hash info from the json data
 	const start = "net.sf.files = ", end = ";\nnet.sf.staging_days =";
-	let data = res.data.substring(res.data.indexOf(start) + start.length, res.data.indexOf(end));
-	let json = JSON.parse(data);
-	for(let i in json) {
-		let e = json[i];
-		if(e.type === "f" && e.downloadable) { // file
+	const data = res.data.substring(res.data.indexOf(start) + start.length, res.data.indexOf(end));
+	const json = JSON.parse(data);
+	for(const i in json) {
+		const e = json[i];
+		if(e.type === "f" && e.downloadable === true) { // file
 			hash.set(e.name, {
 				md5: e.md5,
 				sha1: e.sha1,
@@ -47,16 +47,16 @@ const fetchTree = async (url: string, newerThan: Date | undefined): Promise<Down
 	// Use cheerio to parse html, syntax the info from html table element
 
 	const $ = cheerio.load(res.data);
-	let list = $('table#files_list tbody tr');
-	for(let i of list) {
-		let e = $(i);
+	const list = $('table#files_list tbody tr');
+	for(const i of list) {
+		const e = $(i);
 		if(newerThan !== undefined) {
-			let time = new Date(`${ e.find("td[headers=files_date_h] abbr").attr("title") }`);
+			const time = new Date(`${ e.find("td[headers=files_date_h] abbr").attr("title") }`);
 			if(time <= newerThan) continue;
 		}
 
 		if(e.hasClass("folder")) {
-			let url = `https://sourceforge.net${ e.find("th[headers=files_name_h] a").attr("href") }`;
+			const url = `https://sourceforge.net${ e.find("th[headers=files_name_h] a").attr("href") }`;
 			fetchTree(url, newerThan).then(r => ret.push(...r));
 		} else if(e.hasClass("file")) {
 			ret.push({
@@ -70,4 +70,4 @@ const fetchTree = async (url: string, newerThan: Date | undefined): Promise<Down
 
 	hash.clear();
 	return ret;
-}
+};

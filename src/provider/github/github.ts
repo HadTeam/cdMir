@@ -18,24 +18,24 @@ export default async (params: GithubProviderParams): Promise<DownloadParam[]> =>
 	switch(params.resType) {
 		case "release":
 			const { owner, repo, newerThan } = params;
-			let headers: axios.RawAxiosRequestHeaders = {
+			const headers: axios.RawAxiosRequestHeaders = {
 				"Accept": "application/vnd.github.v3+json",
 				"X-GitHub-Api-Version": "2022-11-28",
 			};
 			if(config.github.token !== undefined) {
-				headers["Authorization"] = `token ${ config.github.token }`
+				headers["Authorization"] = `token ${ config.github.token }`;
 			}
-			let res = await req({
+			const res = await req({
 				url: `https://api.github.com/repos/${ owner }/${ repo }/releases`,
 				method: "GET",
 				headers: headers,
 			});
 			let endFlag = false;
-			let ret: DownloadParam[] = [];
-			for(let release of await res.data) {
-				for(let asset of release.assets) {
+			const ret: DownloadParam[] = [];
+			for(const release of await res.data) {
+				for(const asset of release.assets) {
 					if(newerThan !== undefined) {
-						let time = new Date(asset.updated_at);
+						const time = new Date(asset.updated_at);
 						if(time <= newerThan) endFlag = true;
 					}
 					ret.push({
@@ -51,4 +51,4 @@ export default async (params: GithubProviderParams): Promise<DownloadParam[]> =>
 		default:
 			throw new Error("Invalid resource type");
 	}
-}
+};

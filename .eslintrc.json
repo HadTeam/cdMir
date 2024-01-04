@@ -5,5 +5,8 @@
         "project": "./tsconfig.json"
     },
     "extends": ["plugin:@typescript-eslint/recommended"],
-    "rules": { "@typescript-eslint/no-inferrable-types": "off" }
+    "rules": {
+        "@typescript-eslint/no-inferrable-types": "off",
+        "semi": ["error", "always"]
+    }
 }
