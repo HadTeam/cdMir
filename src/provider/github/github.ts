@@ -18,10 +18,9 @@ export default async (params: GithubProviderParams): Promise<DownloadParam[]> =>
 	switch(params.resType) {
 		case "release":
 			const { owner, repo, newerThan } = params;
-			const headers: axios.RawAxiosRequestHeaders = {
-				"Accept": "application/vnd.github.v3+json",
-				"X-GitHub-Api-Version": "2022-11-28",
-			};
+			const headers: axios.RawAxiosRequestHeaders = {};
+			headers["Accept"]="application/vnd.github.v3+json";
+			headers["X-GitHub-Api-Version"]="2022-11-28";
 			if(config.github.token !== undefined) {
 				headers["Authorization"] = `token ${ config.github.token }`;
 			}
