@@ -60,8 +60,19 @@ const fetchTree = async (url: string, newerThan: Date | undefined): Promise<Down
 			const url = `https://sourceforge.net${ e.find("th[headers=files_name_h] a").attr("href") }`;
 			fetchTree(url, newerThan).then(r => ret.push(...r));
 		} else if(e.hasClass("file")) {
+			const originalUrl = e.find("th[headers=files_name_h] a").attr("href");
+			if(originalUrl === undefined) continue;
+			let path = (new URL(originalUrl)).pathname;
+			
+
+			// like "/projects/codeblocks/files/readme/download" to "/project/codeblocks/readme/"
+			path = path.replace(/^\/projects\//, "/project/");
+			path = path.replace(/\/files\//, "/");
+			path = path.replace(/\/download$/, "");
+
+			const downloadUrl = `https://downloads.sourceforge.net${ path }`;
 			ret.push({
-				url: `${ e.find("th a").attr("href") }`,
+				url: downloadUrl,
 				filename: e.find("th a span").text(),
 				referrer: url,
 				hash: hash.get(e.find("th a span").text()),
