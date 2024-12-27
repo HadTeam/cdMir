@@ -1,7 +1,8 @@
 name: update website
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - main
 jobs:
   processData:
     runs-on: ubuntu-24.04
