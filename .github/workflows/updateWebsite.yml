@@ -13,11 +13,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '22.x'
-      - name: Setup Yarn
-        run: |
-          corepack enable
-          corepack prepare yarn@stable --activate
-          yarn --version
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
       - name: get commit info
         id: commit
         uses: pr-mpt/actions-commit-hash@v3
@@ -25,9 +24,9 @@ jobs:
           prefix: 'commit_'
       - name: Install dependencies
         run: |
-          yarn install --immutable
+          pnpm install --frozen-lockfile
           cd ./src/data
-          yarn install --immutable
+          pnpm install --frozen-lockfile
           node processData.js
         env:
           COMMITID: ${{ steps.commit.outputs.short }}
@@ -49,15 +48,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '22.x'
-      - name: Setup Yarn
-        run: |
-          corepack enable
-          corepack prepare yarn@stable --activate
-          yarn --version
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
       - name: Install dependencies & build
         run: |
-          yarn install --immutable
-          yarn build
+          pnpm install --frozen-lockfile
+          env
+          pnpm build
         env:
           CI: true
           NODE_ENV: production
