@@ -1,0 +1,32 @@
+[
+    {
+        "text": "反馈(CornBlog)",
+        "href": "https://cornworld.cn/other/cdMir",
+        "as": "a",
+        "target": "_blank"
+    },
+    {
+        "text": "Exlg",
+        "href": "https://exlg.cc",
+        "as": "a",
+        "target": "_blank"
+    },
+    {
+        "text": "OIerSpace",
+        "href": "https://oier.space",
+        "as": "a",
+        "target": "_blank"
+    },
+    {
+        "text": "HydroOJ",
+        "href": "https://hydro.ac",
+        "as": "a",
+        "target": "_blank"
+    },
+    {
+        "text": "LOJ",
+        "href": "https://loj.ac",
+        "as": "a",
+        "target": "_blank"
+    }
+]

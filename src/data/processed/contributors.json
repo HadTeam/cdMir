@@ -1,0 +1,26 @@
+[
+    {
+        "header": "CornWorld",
+        "href": "https://cornworld.cn/",
+        "as": "a",
+        "image": "/static/avatar/cornworld.jpg",
+        "meta": "全栈开发者 & OIer",
+        "description": "\"希望人没事\""
+    },
+    {
+        "header": "dhclientqwq",
+        "href": "",
+        "as": "a",
+        "image": "/static/avatar/dhclientqwq.jpg",
+        "meta": "OIer",
+        "description": "\"Starting from scratch.\""
+    },
+    {
+        "header": "Echidna",
+        "href": "",
+        "as": "a",
+        "image": "/static/avatar/echidna.jpg",
+        "meta": "OIer",
+        "description": ""
+    }
+]

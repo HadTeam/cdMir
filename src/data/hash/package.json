@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "commander": "^9.2.0",
+    "crypto": "^1.0.1",
+    "fs": "^0.0.1-security"
+  },
+  "type": "module"
+}
