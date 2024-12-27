@@ -26,7 +26,7 @@ jobs:
         run: |
           pnpm install --frozen-lockfile
           cd ./src/data
-          pnpm install --frozen-lockfile
+          pnpm install
           node processData.js
         env:
           COMMITID: ${{ steps.commit.outputs.short }}
