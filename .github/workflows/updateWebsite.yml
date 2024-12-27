@@ -77,7 +77,7 @@ jobs:
       - name: Install Python2
         uses: actions/setup-python@v3
         with:
-          python-version: '2.x'
+          python-version: '3.x'
           architecture: 'x64'
       - name: refresh CDN
         run: |
