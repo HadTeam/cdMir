@@ -1,31 +1,11 @@
 import { FC } from 'react';
 import { Accordion, Card, Container, Divider, Icon } from 'semantic-ui-react';
 import { isMobile } from 'react-device-detect';
+import { DonateInfo, Contributor, FAQ } from './types';
 
 import contributors from './data/processed/contributors.json';
 import faqs from './data/processed/faqs.json';
 import donateInfo from './data/processed/donateInfo.json';
-
-interface Contributor {
-  header: string;
-  href: string;
-  as: string;
-  image: string;
-  meta: string;
-  description: string;
-}
-
-interface FAQ {
-  key: string;
-  title: string;
-  content: string;
-}
-
-interface DonateInfo {
-  image: string;
-  header: string;
-  meta: string;
-}
 
 const About: FC = () => {
   return (

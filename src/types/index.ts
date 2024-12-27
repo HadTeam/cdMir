@@ -1,3 +1,29 @@
+export interface FileSource {
+  filename: string;
+  url: string;
+}
+
+export interface FileHash {
+  md5?: string;
+  sha1?: string;
+  sha256?: string;
+}
+
+export interface FileTags {
+  source: string;
+  id: string;
+  filetype: string;
+  hash?: FileHash;
+}
+
+export interface File {
+  filename: string;
+  url: string;
+  urlType: "directly" | "multiple";
+  tags: FileTags;
+  index?: number;
+}
+
 export interface Software {
   name: string;
   website: string;
@@ -6,28 +32,8 @@ export interface Software {
   recommend: boolean;
   slug: string;
   sources: {
-    [key: string]: {
-      filename: string;
-      url: string;
-    }[];
+    [key: string]: FileSource[];
   };
-}
-
-export interface File {
-  filename: string;
-  url: string;
-  urlType: string;
-  tags: {
-    source: string;
-    id: string;
-    filetype: string;
-    hash?: {
-      md5: string;
-      sha1: string;
-      sha256: string;
-    };
-  };
-  index?: number;
 }
 
 export interface Contributor {
@@ -57,44 +63,6 @@ export interface BuildInfo {
   time: string;
 }
 
-export interface Software {
-  name: string;
-  website: string;
-  description: string;
-  filesId: string[];
-  recommend: boolean;
-  slug: string;
-  sources: {
-    [key: string]: FileSource[];
-  };
-}
-
-export interface FileSource {
-  filename: string;
-  url: string;
-}
-
-export interface FileHash {
-  md5?: string;
-  sha1?: string;
-  sha256?: string;
-}
-
-export interface FileTags {
-  source: string;
-  id: string;
-  filetype: string;
-  hash?: FileHash;
-}
-
-export interface File {
-  filename: string;
-  url: string;
-  urlType: "directly" | "multiple";
-  tags: FileTags;
-  index?: number;
-}
-
 export interface SearchState {
   loading: boolean;
   searchResults: SearchResult[];
@@ -113,4 +81,11 @@ export interface HomeModalState {
   download: {
     [key: string]: FileSource[];
   };
+}
+
+export interface DonateInfo {
+  header: string;
+  as: string;
+  image: string;
+  meta: string;
 }

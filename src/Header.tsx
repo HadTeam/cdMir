@@ -1,7 +1,6 @@
 import { FC, useState, useEffect } from 'react';
 import { Container, Dropdown, Menu } from 'semantic-ui-react';
 import { useLocation } from 'react-router-dom';
-import { Link } from './types';
 import links from './data/processed/links.json';
 
 const Header: FC = () => {

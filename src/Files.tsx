@@ -1,13 +1,11 @@
 import { FC, useCallback, useEffect, useRef, useReducer, useState } from 'react';
-import { Icon, Label, Pagination, Popup, Search, Table } from 'semantic-ui-react';
+import { Icon, Label, Pagination, Popup, Search, Table, SearchProps } from 'semantic-ui-react';
 import * as _ from 'lodash';
-import { File, SearchState } from './types';
+import { File, SearchState, FileHash } from './types';
 import files from './data/processed/files.json';
 
 interface HashPopupProps {
-  hashObj: {
-    [key: string]: string;
-  };
+  hashObj: FileHash;
 }
 
 const HashPopup: FC<HashPopupProps> = ({ hashObj }) => {
@@ -20,9 +18,9 @@ const HashPopup: FC<HashPopupProps> = ({ hashObj }) => {
       hideOnScroll
       position='bottom right'
     >
-      {Object.keys(hashObj).map((hashType, index) => (
+      {Object.keys(hashObj || {}).map((hashType, index) => (
         <Popup.Content key={index}>
-          {hashType}: {hashObj[hashType]}
+          {hashType}: {hashObj[hashType as keyof FileHash]}
         </Popup.Content>
       ))}
     </Popup>
@@ -38,7 +36,7 @@ const Files: FC = () => {
   });
 
   const filesTot = shownFiles.length;
-  const pagesTot = Math.floor(filesTot / pageLength) + (filesTot % pageLength !== 0);
+  const pagesTot = Math.floor(filesTot / pageLength) + (filesTot % pageLength !== 0 ? 1 : 0);
   const leftNum = (activePage - 1) * pageLength;
 
   shownFiles.forEach((item, index) => {
@@ -70,20 +68,20 @@ const Files: FC = () => {
   const [searchState, searchDispatch] = useReducer(searchReducer, searchInitState);
   const { loading, searchResults, value } = searchState;
 
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
-  const search = useCallback((e: any, data: { value: string }) => {
+  const search = useCallback((_e: React.MouseEvent<HTMLElement>, data: SearchProps) => {
     clearTimeout(timeoutRef.current);
-    searchDispatch({ type: 'SEARCH_START', query: data.value });
+    searchDispatch({ type: 'SEARCH_START', query: data.value || '' });
 
     timeoutRef.current = setTimeout(() => {
-      if (data.value.length === 0) {
+      if (!data.value || data.value.length === 0) {
         searchDispatch({ type: 'SEARCH_CLEAN' });
         return;
       }
 
       const isMatch = (item: File) => {
-        const re = new RegExp(_.escapeRegExp(data.value), 'i');
+        const re = new RegExp(_.escapeRegExp(data.value || ''), 'i');
         return re.test(item.filename);
       };
 
@@ -101,7 +99,9 @@ const Files: FC = () => {
 
   useEffect(() => {
     return () => {
-      clearTimeout(timeoutRef.current);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
   }, []);
 
@@ -119,7 +119,7 @@ const Files: FC = () => {
                 onSearchChange={search}
                 results={searchResults}
                 value={value}
-                onResultSelect={(e, data) => {
+                onResultSelect={(_e, data) => {
                   searchDispatch({ type: 'SEARCH_UPDATE_SELECTION', selection: data.result });
                 }}
               />
@@ -131,12 +131,11 @@ const Files: FC = () => {
           {shownFiles.slice(leftNum, leftNum + pageLength).map((item, index) => (
             <Table.Row key={index}>
               <Table.Cell singleLine width={5}>
-                <Icon name='text file' />
+                <Icon name='file text' />
                 <a
                   href={item.url}
                   target='_blank'
                   rel="noreferrer"
-                  name={item.url + item.tags.source}
                 >
                   {item.filename}
                 </a>
@@ -144,14 +143,14 @@ const Files: FC = () => {
               <Table.Cell colSpan={2} textAlign='right'>
                 <Label.Group>
                   {Object.keys(item.tags).map((tag) => {
-                    switch (tag) {
-                      case 'hash':
-                        return <HashPopup hashObj={item.tags[tag]} key={index + tag} />;
-                      case 'id':
-                        return null;
-                      default:
-                        return <Label key={index + tag}>{tag}: {item.tags[tag]}</Label>;
+                    if (tag === 'hash') {
+                      return <HashPopup hashObj={item.tags.hash!} key={index + tag} />;
                     }
+                    if (tag === 'id') {
+                      return null;
+                    }
+                    const value = item.tags[tag as keyof typeof item.tags];
+                    return <Label key={index + tag}>{tag}: {typeof value === 'string' ? value : JSON.stringify(value)}</Label>;
                   })}
                 </Label.Group>
               </Table.Cell>
@@ -164,7 +163,7 @@ const Files: FC = () => {
               <Pagination
                 totalPages={pagesTot}
                 activePage={activePage}
-                onPageChange={(e, data) => {
+                onPageChange={(_e, data) => {
                   setActivePage(data.activePage as number);
                 }}
               />
