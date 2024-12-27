@@ -1,26 +1,29 @@
 name: update website
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - main
 jobs:
   processData:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     name: process data file
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 16.14.2
+      - name: Use Node.js 22.12.0
         uses: actions/setup-node@v1
         with:
-          node-version: 16.14.2
+          node-version: 22.12.0
       - name: get commit info
         id: commit
         uses: pr-mpt/actions-commit-hash@v1
         with:
           prefix: 'commit_'
-      - name: npm install, start process
+      - name: Install Yarn
+        run: npm install -g yarn
+      - name: yarn install & process
         run: |
           cd ./src/data
-          npm install
+          yarn install
           node processData.js
         env:
           COMMITID: ${{ steps.commit.outputs.short }}
@@ -35,17 +38,19 @@ jobs:
   deploy:
     name: deploy to Tencent COS
     needs: processData
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 16.14.2
+      - name: Use Node.js 22.12.0
         uses: actions/setup-node@v1
         with:
-          node-version: 16.14.2
-      - name: npm install, build
+          node-version: 22.12.0
+      - name: Install Yarn
+        run: npm install -g yarn
+      - name: yarn install & build
         run: |
-          npm install
-          npm run build
+          yarn install
+          yarn build
         env:
           CI: false
           NODE_ENV: production
