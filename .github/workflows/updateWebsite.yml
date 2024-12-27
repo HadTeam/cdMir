@@ -5,25 +5,29 @@ on:
       - main
 jobs:
   processData:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     name: process data file
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 22.12.0
-        uses: actions/setup-node@v1
+      - name: Use Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 22.12.0
+          node-version: '22.x'
+      - name: Setup Yarn
+        run: |
+          corepack enable
+          corepack prepare yarn@stable --activate
+          yarn --version
       - name: get commit info
         id: commit
-        uses: pr-mpt/actions-commit-hash@v1
+        uses: pr-mpt/actions-commit-hash@v3
         with:
           prefix: 'commit_'
-      - name: Install Yarn
-        run: npm install -g yarn
-      - name: yarn install & process
+      - name: Install dependencies
         run: |
+          yarn install --immutable
           cd ./src/data
-          yarn install
+          yarn install --immutable
           node processData.js
         env:
           COMMITID: ${{ steps.commit.outputs.short }}
@@ -38,21 +42,24 @@ jobs:
   deploy:
     name: deploy to Tencent COS
     needs: processData
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 22.12.0
-        uses: actions/setup-node@v1
+      - name: Use Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 22.12.0
-      - name: Install Yarn
-        run: npm install -g yarn
-      - name: yarn install & build
+          node-version: '22.x'
+      - name: Setup Yarn
         run: |
-          yarn install --frozen-lockfile
+          corepack enable
+          corepack prepare yarn@stable --activate
+          yarn --version
+      - name: Install dependencies & build
+        run: |
+          yarn install --immutable
           yarn build
         env:
-          CI: false
+          CI: true
           NODE_ENV: production
           GENERATE_SOURCEMAP: false
       - name: Upload COS
