@@ -29,6 +29,7 @@ jobs:
           pnpm install
       - name: Process data
         run: |
+          cd ./src/data
           node processData.js
         env:
           COMMITID: ${{ steps.commit.outputs.short }}
