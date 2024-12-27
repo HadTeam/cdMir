@@ -43,7 +43,7 @@ jobs:
   
   deploy:
     name: deploy to Tencent COS
-    # needs: processData
+    needs: processData
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
