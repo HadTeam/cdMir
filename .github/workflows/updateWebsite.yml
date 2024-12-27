@@ -27,6 +27,8 @@ jobs:
           pnpm install --frozen-lockfile
           cd ./src/data
           pnpm install
+      - name: Process data
+        run: |
           node processData.js
         env:
           COMMITID: ${{ steps.commit.outputs.short }}
@@ -40,7 +42,7 @@ jobs:
   
   deploy:
     name: deploy to Tencent COS
-    needs: processData
+    # needs: processData
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -49,13 +51,14 @@ jobs:
         with:
           node-version: '22.x'
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: latest
-      - name: Install dependencies & build
+        run: |
+          corepack enable pnpm
+          pnpm --version
+      - name: Install dependencies
         run: |
           pnpm install --frozen-lockfile
-          env
+      - name: Build
+        run: |
           pnpm build
         env:
           CI: true
