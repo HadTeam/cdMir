@@ -1,7 +1,7 @@
 {
-  "name": "cdmir-ts",
-  "private": true,
-  "version": "0.0.0",
+  "name": "cdmir",
+  "private": false,
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
