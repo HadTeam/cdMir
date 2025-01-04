@@ -13,7 +13,7 @@ const HashPopup: FC<HashPopupProps> = ({ hashObj }) => {
     <Popup
       on='click'
       pinned
-      trigger={<Label as='a'>hash: (click)</Label>}
+      trigger={<Label style={{ cursor: 'pointer' }}>hash: (click)</Label>}
       positionFixed
       hideOnScroll
       position='bottom right'

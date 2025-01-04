@@ -1,0 +1,40 @@
+/* 提高文本和背景的对比度 */
+body {
+  background-color: #ffffff;
+  color: #333333;  /* 深灰色文本，确保与白色背景的对比度 */
+}
+
+/* 链接颜色 */
+a {
+  color: #0052cc;  /* 深蓝色链接，与白色背景的对比度比率超过 4.5:1 */
+}
+
+a:hover {
+  color: #003d99;  /* 更深的蓝色用于悬停状态 */
+}
+
+/* 确保加载器的对比度 */
+.ui.loader {
+  color: #333333;
+}
+
+/* 菜单项的颜色 */
+.ui.menu .item {
+  color: #333333;
+}
+
+/* 活动菜单项的颜色 */
+.ui.menu .active.item {
+  background-color: #e6e6e6;
+  color: #000000;
+}
+
+/* 下拉菜单的颜色 */
+.ui.dropdown {
+  color: #333333;
+}
+
+/* 标题颜色 */
+h1, h2, h3, h4, h5, h6 {
+  color: #1a1a1a;
+} 

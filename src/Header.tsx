@@ -70,9 +70,13 @@ const Header: FC = () => {
               item 
               text='Links' 
               simple 
+              role="listbox"
+              aria-haspopup="true"
+              aria-label="External links navigation"
               options={links.map((item, index) => ({
                 ...item,
-                key: index
+                key: index,
+                role: 'option'
               }))}
             />
             

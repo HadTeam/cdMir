@@ -1,17 +1,15 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-
 import 'fomantic-ui-css/semantic.min.css';
-import '@fontsource/jetbrains-mono';
-import { Container, Divider, Icon, Segment } from 'semantic-ui-react';
+import { Container, Divider, Icon, Segment, Loader } from 'semantic-ui-react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Header from './Header';
-import Home from './Home';
-import Files from './Files';
-import About from './About';
-import NoMatch from './NoMatch';
+const Home = React.lazy(() => import('./Home'));
+const Files = React.lazy(() => import('./Files'));
+const About = React.lazy(() => import('./About'));
+const NoMatch = React.lazy(() => import('./NoMatch'));
 
 import { BuildInfo } from './types';
 import buildInfo from './data/processed/buildInfo.json';
@@ -22,12 +20,14 @@ const App: React.FC = () => {
       <Header />
       
       <Container>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/files' element={<Files />} />
-          <Route path='/about' element={<About />} />
-          <Route path='*' element={<NoMatch />} />
-        </Routes>
+        <Suspense fallback={<Loader active>Loading...</Loader>}>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/files' element={<Files />} />
+            <Route path='/about' element={<About />} />
+            <Route path='*' element={<NoMatch />} />
+          </Routes>
+        </Suspense>
       </Container>
       
       <Divider hidden />
@@ -37,7 +37,13 @@ const App: React.FC = () => {
           <div>cdMir Powered by <a href='https://github.com/HadTeam'>HadTeam</a></div>
           <div>Build: {(buildInfo as BuildInfo).commitId} | Time: {(buildInfo as BuildInfo).time}</div>
           <div>
-            <a href='https://github.com/HadTeam/cdMir'><Icon name='github' /></a>
+            <a 
+              href='https://github.com/HadTeam/cdMir'
+              aria-label="Visit cdMir GitHub repository"
+              title="Visit cdMir GitHub repository"
+            >
+              <Icon name='github' aria-hidden="true" />
+            </a>
           </div>
         </Segment>
       </Container>
@@ -52,4 +58,9 @@ root.render(
   </React.StrictMode>
 );
 
-reportWebVitals((metric) => console.log(metric));
+// Only log performance metrics in development
+if (process.env.NODE_ENV === 'development') {
+  reportWebVitals((metric) => console.log(metric));
+} else {
+  reportWebVitals();
+}
