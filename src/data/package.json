@@ -6,5 +6,19 @@
     "luxon": "^2.3.1",
     "object-hash": "^3.0.0"
   },
-  "type": "module"
+  "scripts": {
+    "gen-icons": "node ./gen-icons.js"
+  },
+  "type": "module",
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "sharp"
+    ],
+    "onlyBuiltDependencies": [
+      "sharp"
+    ]
+  }
 }

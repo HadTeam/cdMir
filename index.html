@@ -11,7 +11,7 @@
 Github: https://github.com/HadTeam
 -->
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-cmn-Hans"> <!-- 中文, 简体, 汉语 from https://datatracker.ietf.org/doc/html/bcp47 -->
 <head>
     <title>cdMir</title>
     <meta charset="UTF-8" content="text/html">
@@ -39,6 +39,19 @@ Github: https://github.com/HadTeam
     <!-- Preload key resources -->
     <link rel="modulepreload" href="/src/main.tsx" as="script">
     
+    <link rel="icon" type="image/png" href="/icons/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1976d2" />
+    <meta name="description" content="A software mirror list for users in mainland China" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Preconnect to required domains -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" crossorigin="anonymous" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" crossorigin="anonymous" href="https://fonts.gstatic.com" />
+    
     <style>
         /* Font display swap strategy */
         @font-face {
@@ -61,5 +74,6 @@ Github: https://github.com/HadTeam
         <div class="ui active loader">Loading...</div>
     </div>
     <script type="module" src="/src/main.tsx"></script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
 </body>
 </html>

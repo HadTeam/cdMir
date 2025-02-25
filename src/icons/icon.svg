@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="64" fill="#0d47a1"/>
+  
+  <!-- Mirror/CD circle -->
+  <circle cx="256" cy="256" r="200" fill="#ffffff"/>
+  <circle cx="256" cy="256" r="160" fill="#e3f2fd" stroke="#bbdefb" stroke-width="2"/>
+  
+  <!-- Central hole -->
+  <circle cx="256" cy="256" r="30" fill="#0d47a1"/>
+  
+  <!-- CD track lines -->
+  <circle cx="256" cy="256" r="80" fill="none" stroke="#bbdefb" stroke-width="2"/>
+  <circle cx="256" cy="256" r="120" fill="none" stroke="#bbdefb" stroke-width="2"/>
+  
+  <!-- Mirror reflection -->
+  <path d="M176 176L336 336M176 216L296 336M216 176L336 296" 
+        stroke="#ffffff" 
+        stroke-width="4" 
+        stroke-linecap="round"
+        opacity="0.5"/>
+</svg>
