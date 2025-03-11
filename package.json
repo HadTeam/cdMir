@@ -33,6 +33,7 @@
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.16",
+    "fs-extra": "^11.3.0",
     "globals": "^15.14.0",
     "regenerator-runtime": "^0.14.1",
     "rollup-plugin-visualizer": "^5.13.1",
